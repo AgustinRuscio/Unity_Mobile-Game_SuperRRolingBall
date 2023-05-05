@@ -15,30 +15,18 @@ public class Camera : MonoBehaviour
     private Vector3 maxDistance;
 
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        var p = FindObjectOfType<BallStates>();
+
+        if (p != null)
+            player = p.gameObject.transform;
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-
         _cameraobj.transform.position = player.localToWorldMatrix.GetPosition() + maxDistance;
-
-
-      
-
     }
-
-    
-
-
-
-
-
 
 }

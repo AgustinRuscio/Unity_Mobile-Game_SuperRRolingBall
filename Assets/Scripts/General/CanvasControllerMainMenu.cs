@@ -15,6 +15,10 @@ public class CanvasControllerMainMenu : MonoBehaviour
     private GameObject _shopCanvas;
 
     [SerializeField]
+    private GameObject _notEnoughStaminaCanvas;
+
+
+    [SerializeField]
     private SceneChanger _scenehanger;
 
     private void Awake()
@@ -57,6 +61,11 @@ public class CanvasControllerMainMenu : MonoBehaviour
     public void ShopOff()
     {
         _shopCanvas.SetActive(false);
+    }
+
+    public void StaminaOff()
+    {
+        _notEnoughStaminaCanvas.SetActive(false);
     }
 
     public void Quit()

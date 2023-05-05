@@ -13,12 +13,21 @@ public class GameManager : MonoBehaviour
     private SceneChanger _changer;
 
     [SerializeField]
+    private Transform _initialBallPos;
+
+    [SerializeField]
     private string _nextLevel;
 
     public int _levelCoins;
 
+    private int _currentSkin;
+
     private bool _paused;
 
+    private string _levelName;
+
+    [SerializeField]
+    private GameObject[] _skinsList = new GameObject[8];
 
     private void Awake()
     {
@@ -29,8 +38,20 @@ public class GameManager : MonoBehaviour
 
         EventManager.Subscribe(EventEnum.AddCoin, AddLocalCoin);
 
+        
+        _levelName = SceneManager.GetActiveScene().name;
 
         _changer = new SceneChanger().SetSceneToChangeName(_nextLevel);
+
+        
+        _currentSkin = PlayerPrefs.GetInt(ConstantStrings.currentSkin);
+
+        Debug.Log(_currentSkin);
+
+        if (_levelName != "Tutorial")
+            Instantiate(_skinsList[_currentSkin], _initialBallPos.position, _initialBallPos.rotation);
+
+        _ball = FindObjectOfType<BallStates>();
     }
 
     void Update()
@@ -40,7 +61,7 @@ public class GameManager : MonoBehaviour
         if (_ball.DeathCondition())
         {
             //PonerCanvas de muerte
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(_levelName);
         }
     }
 

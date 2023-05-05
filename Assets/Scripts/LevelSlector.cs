@@ -9,7 +9,10 @@ public class LevelSlector : MonoBehaviour
 
     [SerializeField]
     private GameObject _canvas;
-    
+
+    [SerializeField]
+    private GameObject _staminaCanvas;
+
     [SerializeField]
     private string _nextLvl;
 
@@ -24,6 +27,10 @@ public class LevelSlector : MonoBehaviour
         {
             GameData.instance.SubstractStamina();
             _changer.LoadScene();
+        }
+        else
+        {
+            _staminaCanvas.SetActive(true);
         }
     }
 
