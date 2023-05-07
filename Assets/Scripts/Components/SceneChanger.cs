@@ -23,6 +23,4 @@ public class SceneChanger
     {
         SceneManager.LoadScene(sceneName);
     }
-
-
 }

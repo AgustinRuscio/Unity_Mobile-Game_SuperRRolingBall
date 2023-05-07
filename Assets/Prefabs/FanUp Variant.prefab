@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b4977af01d8d22f4a8d3d1f702365206, type: 2}
+    - target: {fileID: 1351342661726618932, guid: 2e012367a6115b54a9194edef724a413, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: eac5a08ec9ad0244eadddcd8b746f3d4, type: 2}
     - target: {fileID: 1351342661726618935, guid: 2e012367a6115b54a9194edef724a413, type: 3}
       propertyPath: m_Size.z
       value: 0.002
@@ -75,5 +79,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FanUp Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1343580728, guid: 2e012367a6115b54a9194edef724a413, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2e012367a6115b54a9194edef724a413, type: 3}

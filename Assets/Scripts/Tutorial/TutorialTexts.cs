@@ -15,11 +15,14 @@ public class TutorialTexts : MonoBehaviour
     [SerializeField]
     private string _messageModify = "x";
 
+    [SerializeField]
+    private BallMovement _ballMovement;
 
     private void OnTriggerEnter(Collider other)
     {
         _tutorialUI.SetActive(true);
         _messageTutorialTxt.text = (_messageModify);
+        _ballMovement.canJump = false;
         Time.timeScale = 0f;
     }
 
@@ -28,6 +31,13 @@ public class TutorialTexts : MonoBehaviour
     {
         _tutorialUI.SetActive(false);
         Time.timeScale = 1f;
+        StartCoroutine(CanJumpAgain());
+    }
+
+    IEnumerator CanJumpAgain()
+    {
+        yield return new WaitForSeconds(0.25f);
+        _ballMovement.canJump = true;
     }
 
 }

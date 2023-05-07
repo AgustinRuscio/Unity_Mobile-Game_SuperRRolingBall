@@ -299,6 +299,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sumKeys: 1
+  _keySound:
+    clip: {fileID: 8300000, guid: 98b58e996229b7e449d363bcd20bead5, type: 3}
+    mixerGroup: {fileID: -8280211464532639426, guid: 57b098ecb19ac9e49874b4963abbfe2c, type: 2}
+    loop: 0
+    sound3D: 0
+    maxDistance: 0
 --- !u!1 &7772609605832266880
 GameObject:
   m_ObjectHideFlags: 0

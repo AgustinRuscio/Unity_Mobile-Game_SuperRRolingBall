@@ -32,8 +32,6 @@ public static class EventManager
     {
         if (!EventsContainer.ContainsKey(eventName)) return;
 
-
         EventsContainer[eventName](parameters);
     }
-
 }

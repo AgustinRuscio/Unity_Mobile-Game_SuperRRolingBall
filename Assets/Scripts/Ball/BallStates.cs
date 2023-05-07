@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using Image = UnityEngine.UI.Image;
 
@@ -22,9 +21,7 @@ public class BallStates : MonoBehaviour, IFaneable
         
         EventManager.Subscribe(EventEnum.EnableDoubleJump, TurnOnDoubleJump);
         EventManager.Subscribe(EventEnum.DisableDoubleJump, TurnOffJump);
-        
     }
-
 
     public bool DeathCondition()
     {
@@ -36,15 +33,11 @@ public class BallStates : MonoBehaviour, IFaneable
 
     public void MakeTrigger() => _ballCollider.isTrigger = true;
 
-    private void TurnOnDoubleJump(params object[] parameters)
-    {
-        _doubleJumpImage.color = Color.white;
-    }
+    private void TurnOnDoubleJump(params object[] parameters) => _doubleJumpImage.color = Color.white;
     
-    private void TurnOffJump(params object[] parameters)
-    {
-        _doubleJumpImage.color = Color.grey;
-    }
+    
+    private void TurnOffJump(params object[] parameters) => _doubleJumpImage.color = Color.grey;
+    
 
     private void OnDestroy()
     {

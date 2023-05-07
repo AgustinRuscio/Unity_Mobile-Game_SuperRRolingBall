@@ -10,10 +10,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] 
     private BallStates _ball;
 
+    [SerializeField]
+    private GameObject[] _skinsList = new GameObject[8];
+
     private SceneChanger _changer;
 
     [SerializeField]
     private Transform _initialBallPos;
+
+    [SerializeField]
+    private GameObject _loseCanvas;
 
     [SerializeField]
     private string _nextLevel;
@@ -25,9 +31,7 @@ public class GameManager : MonoBehaviour
     private bool _paused;
 
     private string _levelName;
-
-    [SerializeField]
-    private GameObject[] _skinsList = new GameObject[8];
+    
 
     private void Awake()
     {
@@ -46,8 +50,6 @@ public class GameManager : MonoBehaviour
         
         _currentSkin = PlayerPrefs.GetInt(ConstantStrings.currentSkin);
 
-        Debug.Log(_currentSkin);
-
         if (_levelName != "Tutorial")
             Instantiate(_skinsList[_currentSkin], _initialBallPos.position, _initialBallPos.rotation);
 
@@ -59,10 +61,7 @@ public class GameManager : MonoBehaviour
         if (_paused) return;
 
         if (_ball.DeathCondition())
-        {
-            //PonerCanvas de muerte
-            SceneManager.LoadScene(_levelName);
-        }
+            _loseCanvas.SetActive(true);
     }
 
       
@@ -76,21 +75,13 @@ public class GameManager : MonoBehaviour
     private void AddLocalCoin(params object[] coins)
     {
         _levelCoins += (int)coins[0];
-        Debug.Log("Add coins");
     }
 
     public void SetGamePaused(bool ispaused) => _paused = ispaused;
     
 
-    private void ChangeScene()
-    {
-        _changer.LoadScene();
-    }
+    private void ChangeScene() => _changer.LoadScene();
+    
 
-    private void OnDestroy()
-    {
-        EventManager.Unsubscribe(EventEnum.AddCoin, AddLocalCoin);
-    }
-
-
+    private void OnDestroy() => EventManager.Unsubscribe(EventEnum.AddCoin, AddLocalCoin);
 }

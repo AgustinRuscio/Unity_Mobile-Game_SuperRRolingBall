@@ -26,10 +26,7 @@ public class GameData : MonoBehaviour
             Destroy(this);
 
 
-
         LoadGame();
-
-        Debug.Log("cuando empieza la current skin es" + currentSkin);
     }
 
     public float GetActualStamina()
@@ -161,7 +158,6 @@ public class GameData : MonoBehaviour
 
             PlayerPrefs.SetInt(ConstantStrings.dictotionarySlot7, 0);
             skins[7] = PlayerPrefs.GetInt(ConstantStrings.dictotionarySlot7);
-
         }
     }
 
@@ -265,9 +261,4 @@ public class GameData : MonoBehaviour
 
     #endregion
 
-
-    private void OnDestroy()
-    {
-        
-    }
 }

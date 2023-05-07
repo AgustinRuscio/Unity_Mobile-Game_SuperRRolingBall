@@ -9,9 +9,13 @@ public class Fan : MonoBehaviour
     private Vector3 _airDir;
 
     [SerializeField]
+    private SoundData _soundVent;
+
+    [SerializeField]
     private float _strength;
 
-   
+    private void Start() => AudioManager.instance.AudioPlayWithTrans(_soundVent, transform);
+
     private void OnTriggerStay(Collider other)
     {
         var iFanable = other.gameObject.GetComponent<IFaneable>();

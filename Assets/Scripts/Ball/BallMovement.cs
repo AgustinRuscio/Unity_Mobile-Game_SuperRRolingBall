@@ -2,10 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class BallMovement : MonoBehaviour
 {
     private Rigidbody _sphereRb;
+
+    private GenericTimer _timer;
+
+    [SerializeField]
+    private SoundData _jumpSound;
 
     [SerializeField]
     private float _speed = 1;
@@ -13,13 +19,13 @@ public class BallMovement : MonoBehaviour
     [SerializeField]
     private float _jumpForce ;
 
-    private int _jumping = 0;
+    private float _coolDown = 1.5f;
     
+    private int _jumping = 0;
+
     private bool _doubleJumping = false;
 
-    private GenericTimer _timer;
-    
-    private float _coolDown = 1.5f;
+    public bool canJump;
     
     private void Awake()
     {
@@ -42,7 +48,7 @@ public class BallMovement : MonoBehaviour
 
         _timer.RunTimer();
         
-        if (Input.touchCount > 0 && _jumping <= 0 && _timer.CheckCoolDown())
+        if (Input.touchCount > 0 && _jumping <= 0 && _timer.CheckCoolDown() && canJump)
         {
             Jump();
             _timer.ResetTimer();
@@ -66,6 +72,6 @@ public class BallMovement : MonoBehaviour
     {
         _jumping++;
         _sphereRb.AddForce(0,1 * _jumpForce,0, ForceMode.Impulse);
+        AudioManager.instance.AudioPlayWithPos(_jumpSound, this.transform.position);
     }
-    
 }

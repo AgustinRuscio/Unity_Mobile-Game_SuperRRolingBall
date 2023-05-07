@@ -1708,6 +1708,12 @@ MonoBehaviour:
   _canvas: {fileID: 6589725410072743352}
   _staminaCanvas: {fileID: 0}
   _nextLvl: 
+  _soundButton:
+    clip: {fileID: 8300000, guid: a9cf69bad41612c4a877594ffe16b88f, type: 3}
+    mixerGroup: {fileID: -8280211464532639426, guid: 57b098ecb19ac9e49874b4963abbfe2c, type: 2}
+    loop: 0
+    sound3D: 0
+    maxDistance: 0
 --- !u!1 &1623061720682673275
 GameObject:
   m_ObjectHideFlags: 0
@@ -2996,6 +3002,51 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &6597794836146015782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1919242284463666627}
+  - component: {fileID: 7836956763069054096}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1919242284463666627
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6597794836146015782}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6874161405140098154}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7836956763069054096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6597794836146015782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc1236ba60438c744ab22cfdfb2623d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioInstance: {fileID: 4116020752617217537, guid: 70eb4c5d765a0e54a9daaa25bca2d9a2, type: 3}
 --- !u!1 &6786162134505166016
 GameObject:
   m_ObjectHideFlags: 0
@@ -3230,6 +3281,7 @@ Transform:
   - {fileID: 163708704}
   - {fileID: 7515143628831115241}
   - {fileID: 8961078859688846889}
+  - {fileID: 1919242284463666627}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3246,9 +3298,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ball: {fileID: 0}
-  _initialBallPos: {fileID: 0}
-  _nextLevel: MainMenu
-  _levelCoins: 0
   _skinsList:
   - {fileID: 8724175106357845047, guid: f3d61d09f98224e46964facfa4e92029, type: 3}
   - {fileID: 1517782528126307678, guid: cc99018ebb1a691479616376202d3f8a, type: 3}
@@ -3258,6 +3307,10 @@ MonoBehaviour:
   - {fileID: 7345714149355501130, guid: dfea78f2f72cfb64a9e62e15a0fc7fd2, type: 3}
   - {fileID: 1349160171830415243, guid: ed5978bcc59639340898faeb399e83a6, type: 3}
   - {fileID: 0}
+  _initialBallPos: {fileID: 0}
+  _loseCanvas: {fileID: 6589725410072743352}
+  _nextLevel: MainMenu
+  _levelCoins: 0
 --- !u!114 &1555022427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3271,6 +3324,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pauseCanvas: {fileID: 163708700}
+  _pauseClip:
+    clip: {fileID: 0}
+    mixerGroup: {fileID: 0}
+    loop: 0
+    sound3D: 0
+    maxDistance: 0
 --- !u!1 &6874161406275763304
 GameObject:
   m_ObjectHideFlags: 0
@@ -3693,6 +3752,12 @@ MonoBehaviour:
   _canvas: {fileID: 1962301237077266516}
   _staminaCanvas: {fileID: 0}
   _nextLvl: 
+  _soundButton:
+    clip: {fileID: 0}
+    mixerGroup: {fileID: 0}
+    loop: 0
+    sound3D: 0
+    maxDistance: 0
 --- !u!1 &8395409549765806522
 GameObject:
   m_ObjectHideFlags: 0
