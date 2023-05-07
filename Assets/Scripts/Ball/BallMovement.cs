@@ -25,7 +25,7 @@ public class BallMovement : MonoBehaviour
 
     private bool _doubleJumping = false;
 
-    public bool canJump;
+    public bool canJump = true;
     
     private void Awake()
     {

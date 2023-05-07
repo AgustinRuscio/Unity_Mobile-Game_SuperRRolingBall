@@ -129,8 +129,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faead54c3cf76764199fcf699158f530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
+  _jumpSound:
+    clip: {fileID: 0}
+    mixerGroup: {fileID: 0}
+    loop: 0
+    sound3D: 0
+    maxDistance: 0
+  _speed: 2
   _jumpForce: 5
+  canJump: 0
 --- !u!114 &673815943774281690
 MonoBehaviour:
   m_ObjectHideFlags: 0

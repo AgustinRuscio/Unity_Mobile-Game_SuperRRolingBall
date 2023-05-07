@@ -967,7 +967,7 @@ GameObject:
   - component: {fileID: 3177843903924907271}
   - component: {fileID: 1605748693}
   m_Layer: 0
-  m_Name: TrafficBarrier
+  m_Name: Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

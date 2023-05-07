@@ -2795,11 +2795,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8812349535156985758, guid: 152ad28a5365dbf46b6a3fd76ff6e9f6, type: 3}
   m_PrefabInstance: {fileID: 288520967}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &298449521 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 4345445227510266458, guid: 7bd14ed49d42c194c88f2e84f5137240, type: 3}
-  m_PrefabInstance: {fileID: 2817647737287614583}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &303491462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7866,18 +7861,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 163708700, guid: 11e4e6d1decf1c3468925663ff87f427, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962301237077266516, guid: 11e4e6d1decf1c3468925663ff87f427, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6589725410072743352, guid: 11e4e6d1decf1c3468925663ff87f427, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6874161405140098149, guid: 11e4e6d1decf1c3468925663ff87f427, type: 3}
       propertyPath: _ball
       value: 
@@ -8571,6 +8554,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1605748692, guid: 43096a3f5167b0547b0bc245facb4d6f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8178508199875399636, guid: 43096a3f5167b0547b0bc245facb4d6f, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -8617,7 +8604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8805721775515178350, guid: 43096a3f5167b0547b0bc245facb4d6f, type: 3}
       propertyPath: m_Name
-      value: TrafficBarrier
+      value: Barrier
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43096a3f5167b0547b0bc245facb4d6f, type: 3}
@@ -14689,10 +14676,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndLevelStar
       objectReference: {fileID: 0}
-    - target: {fileID: 2841620618888470794, guid: 7bd14ed49d42c194c88f2e84f5137240, type: 3}
-      propertyPath: _starClip
-      value: 
-      objectReference: {fileID: 298449521}
     - target: {fileID: 2841620618888470794, guid: 7bd14ed49d42c194c88f2e84f5137240, type: 3}
       propertyPath: _winCanvas
       value: 

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Lock : MonoBehaviour
+public class Barrier : MonoBehaviour
 {
     [SerializeField] private int _keysRequiere;
 
@@ -14,7 +14,7 @@ public class Lock : MonoBehaviour
     private Animator _myAnim;
 
     [SerializeField]
-    private Collider _colliderBig;
+    private Collider _myCollider;
 
     [SerializeField]
     private SoundData _barrierAudioOpen;
@@ -24,35 +24,29 @@ public class Lock : MonoBehaviour
 
 
     private void Awake() => EventManager.Subscribe(EventEnum.AddKey, UpdateKeys);
-    
-    private void OnTriggerEnter(Collider other)
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if (_currentKeys >= _keysRequiere )
-        {            
+        if (collision.gameObject.GetComponent<BallMovement>())
+            CheckKeys();
+    }
+
+    private void CheckKeys()
+    {
+        if (_currentKeys >= _keysRequiere)
+        {
             _myAnim.SetBool("Barrierup", true);
-            AudioManager.instance.AudioPlayWithPos(_barrierAudioOpen, this.transform.position);          
+            AudioManager.instance.AudioPlayWithPos(_barrierAudioOpen, this.transform.position);
+
+            _myCollider.enabled = false;
         }
         else if (_currentKeys < _keysRequiere)
-        {
             AudioManager.instance.AudioPlayWithPos(_barrierAudioClose, this.transform.position);
-            _colliderBig.isTrigger = false;
-        }
     }
 
     private void UpdateKeys(params  object[] parameters)
     {
         _currentKeys += (int)parameters[0];
-
-        /*if (_currentKeys >= _keysRequiere)
-        {
-            _myAnim.SetBool("Barrierup", true);
-           
-            AudioManager.instance.AudioPlayWithPos(_barrierAudio, this.transform.position);
-            _colliderBig.enabled = true;
-
-            //Hacer sonido
-            //Destroy(gameObject);
-        }*/
     }
 
     private void OnDestroy() => EventManager.Unsubscribe(EventEnum.AddKey, UpdateKeys);
