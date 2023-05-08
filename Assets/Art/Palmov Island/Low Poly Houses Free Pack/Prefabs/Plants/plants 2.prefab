@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6345936258026016566}
   - component: {fileID: 9220482719492439036}
   - component: {fileID: 1339930469160752210}
+  - component: {fileID: 290433681260855434}
   m_Layer: 0
   m_Name: plants 2
   m_TagString: Untagged
@@ -97,3 +98,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.0199695, y: 1.5761935, z: 0.70202494}
   m_Center: {x: 0.0000011920929, y: 0.7880967, z: -0.0000025182962}
+--- !u!205 &290433681260855434
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7274791547006540329}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.0000011920929, y: 0.7880967, z: -0.000002503395}
+  m_Size: 7.0199695
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.15055014
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 9220482719492439036}
+  m_Enabled: 1

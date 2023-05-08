@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6948950547850307509}
   - component: {fileID: 5155309843825775487}
   - component: {fileID: 6213326063252834786}
+  - component: {fileID: 310522095223171811}
   m_Layer: 0
   m_Name: potted tree
   m_TagString: Untagged
@@ -97,3 +98,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.89710665, y: 1.7835782, z: 0.89710736}
   m_Center: {x: 0.00000022351742, y: 0.8917891, z: 0.00000010430813}
+--- !u!205 &310522095223171811
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6668611196270211754}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.00000023841858, y: 0.8917891, z: 0.00000011920929}
+  m_Size: 1.7835782
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.053558048
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 5155309843825775487}
+  m_Enabled: 1

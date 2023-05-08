@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6877349081754017282}
   - component: {fileID: 8689053111683017416}
   - component: {fileID: 8587547962616701150}
+  - component: {fileID: 6109812098014779755}
   m_Layer: 0
   m_Name: bench
   m_TagString: Untagged
@@ -97,3 +98,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8729486, y: 0.9934846, z: 0.58322406}
   m_Center: {x: -0.000014811754, y: 0.4967423, z: 0.0000018924475}
+--- !u!205 &6109812098014779755
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7175724820082051869}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.000014841557, y: 0.4967423, z: 0.0000019073486}
+  m_Size: 1.8729496
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.07325957
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 8689053111683017416}
+  m_Enabled: 1

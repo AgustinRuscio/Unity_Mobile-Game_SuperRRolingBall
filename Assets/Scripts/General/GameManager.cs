@@ -7,8 +7,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    [SerializeField] 
     private BallStates _ball;
+
+    [SerializeField]
+    private CoreCanvas _coreCanvas;
 
     [SerializeField]
     private GameObject[] _skinsList = new GameObject[8];
@@ -24,7 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private string _nextLevel;
 
-    public int _levelCoins;
+    private int _levelCoins;
 
     private int _currentSkin;
 
@@ -75,6 +77,12 @@ public class GameManager : MonoBehaviour
     private void AddLocalCoin(params object[] coins)
     {
         _levelCoins += (int)coins[0];
+        _coreCanvas.UpdateCanvas(_levelCoins);
+    }
+
+    public int GetLevelCoins()
+    {
+        return _levelCoins;
     }
 
     public void SetGamePaused(bool ispaused) => _paused = ispaused;

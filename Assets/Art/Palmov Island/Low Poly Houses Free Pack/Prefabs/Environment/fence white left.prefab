@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6067956420894348072}
   - component: {fileID: 7177169500431342733}
   - component: {fileID: 4935552578167154759}
+  - component: {fileID: 8006242219445659104}
   m_Layer: 0
   m_Name: fence white left
   m_TagString: Untagged
@@ -83,3 +84,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!205 &8006242219445659104
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6881050099682970002}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0.5258268, z: 0}
+  m_Size: 4.083114
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.15055014
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 4935552578167154759}
+  m_Enabled: 1

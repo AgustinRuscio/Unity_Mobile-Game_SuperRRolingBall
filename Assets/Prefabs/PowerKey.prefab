@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0150753e236107f43af8262a2d5fd65e, type: 2}
+    - target: {fileID: 5605498835840261191, guid: 2367855bef699374186a150391a80e7c, type: 3}
+      propertyPath: _sumKeys
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6253889157034179983, guid: 2367855bef699374186a150391a80e7c, type: 3}
       propertyPath: m_Name
       value: PowerKey

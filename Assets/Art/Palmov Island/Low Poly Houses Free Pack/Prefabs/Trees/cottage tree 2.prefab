@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8130354770559093246}
   - component: {fileID: 6282563122960219444}
   - component: {fileID: 8027639698593862020}
+  - component: {fileID: 3523577309873555265}
   m_Layer: 0
   m_Name: cottage tree 2
   m_TagString: Untagged
@@ -97,3 +98,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.51152265, y: 1.3976521, z: 0.5115229}
   m_Center: {x: 0, y: 0.6988261, z: 0.000000029802322}
+--- !u!205 &3523577309873555265
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5490127293582712033}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0.6988261, z: 0.000000029802322}
+  m_Size: 1.3976521
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.080037884
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 6282563122960219444}
+  m_Enabled: 1
