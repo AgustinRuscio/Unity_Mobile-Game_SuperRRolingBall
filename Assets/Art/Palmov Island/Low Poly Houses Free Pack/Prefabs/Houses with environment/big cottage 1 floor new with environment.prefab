@@ -385,6 +385,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bush 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3044656412177418268, guid: 82bec338e91e92b4b9ae018dcb53d78c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82bec338e91e92b4b9ae018dcb53d78c, type: 3}
 --- !u!23 &2586908667634726069 stripped
