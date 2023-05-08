@@ -10110,8 +10110,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _messageTutorialTxt: {fileID: 683782881}
   _tutorialUI: {fileID: 1834444752}
-  _messageModify: "\xA1Carefull! Remember use have only ONE jump. Use it well. Green
-    arros gives you a second Jump!"
+  _messageModify: "\xA1Careful! Remember you have only ONE jump. Use it well. Green
+    arrows gives you a second Jump!"
   _ballMovement: {fileID: 1409946286}
 --- !u!1001 &1483972638
 PrefabInstance:

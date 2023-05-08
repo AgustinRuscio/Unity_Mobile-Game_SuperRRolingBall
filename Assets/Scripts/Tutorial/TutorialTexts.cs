@@ -23,6 +23,7 @@ public class TutorialTexts : MonoBehaviour
         _tutorialUI.SetActive(true);
         _messageTutorialTxt.text = (_messageModify);
         _ballMovement.canJump = false;
+        _ballMovement.canMove = false;
         Time.timeScale = 0f;
     }
 
@@ -31,6 +32,7 @@ public class TutorialTexts : MonoBehaviour
     {
         _tutorialUI.SetActive(false);
         Time.timeScale = 1f;
+        _ballMovement.canMove = true;
         StartCoroutine(CanJumpAgain());
     }
 

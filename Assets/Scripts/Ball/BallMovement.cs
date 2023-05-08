@@ -26,6 +26,7 @@ public class BallMovement : MonoBehaviour
     private bool _doubleJumping = false;
 
     public bool canJump = true;
+    public bool canMove = true;
     
     private void Awake()
     {
@@ -37,6 +38,8 @@ public class BallMovement : MonoBehaviour
 
     void Update()
     {
+        if (!canMove) return;
+
         Vector3 accelerationFixed =  Input.acceleration ;
 
         accelerationFixed = Quaternion.Euler(90, 0, 0) * accelerationFixed;
