@@ -15,23 +15,34 @@ public class PausedMenu : MonoBehaviour
 
     private SceneChanger _changer ;
 
+    private BallMovement _ballMovement;
+
     private void Awake() => _changer = new SceneChanger().SetSceneToChangeName(menu);
-    
+
+    private void Start()
+    {
+        _ballMovement = FindObjectOfType<BallMovement>();
+    }
 
     public void Resume()
     {
         Time.timeScale = 1f;
+        _ballMovement.canMove = true;
+
         AudioManager.instance.AudioPlay(_pauseClip);
         GameManager.instance.SetGamePaused(false);
+
         _pauseCanvas.SetActive(false);
     }
 
     public void Pause()
     {
         Time.timeScale = 0f;
+        _ballMovement.canMove = false;
 
         AudioManager.instance.AudioPlay(_pauseClip);
         GameManager.instance.SetGamePaused(true);
+
         _pauseCanvas.SetActive(true);
     }
 

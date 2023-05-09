@@ -20,9 +20,10 @@ public class Star : MonoBehaviour
         {
             CheckTutorial();
             _starClip.Play();
-            //StartCoroutine(WaitForEndOfSound());
 
             _winCanvas.SetActive(true);
+
+            Destroy(gameObject, 0.5f);
         }
     }
 
@@ -30,11 +31,5 @@ public class Star : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Tutorial")
             PlayerPrefs.SetInt(ConstantStrings.firstTimePlaying, 1);
-    }
-
-
-    IEnumerator WaitForEndOfSound()
-    {
-        yield return new WaitForSeconds(2f); ;
     }
 }
