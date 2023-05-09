@@ -34,6 +34,8 @@ public class BallMovement : MonoBehaviour
         _sphereRb = GetComponent<Rigidbody>();
 
         _timer = new GenericTimer(_coolDown);
+
+        canJump = true;
     }
 
     void Update()
@@ -54,6 +56,7 @@ public class BallMovement : MonoBehaviour
         if (Input.touchCount > 0 && _jumping <= 0 && _timer.CheckCoolDown() && canJump)
         {
             Jump();
+
             _timer.ResetTimer();
             CheckJumping();
         }
@@ -75,6 +78,7 @@ public class BallMovement : MonoBehaviour
     {
         _jumping++;
         _sphereRb.AddForce(0,1 * _jumpForce,0, ForceMode.Impulse);
+
         AudioManager.instance.AudioPlayWithPos(_jumpSound, this.transform.position);
     }
 }

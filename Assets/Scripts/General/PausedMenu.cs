@@ -19,10 +19,8 @@ public class PausedMenu : MonoBehaviour
 
     private void Awake() => _changer = new SceneChanger().SetSceneToChangeName(menu);
 
-    private void Start()
-    {
-        _ballMovement = FindObjectOfType<BallMovement>();
-    }
+    private void Start() => _ballMovement = FindObjectOfType<BallMovement>();
+    
 
     public void Resume()
     {
@@ -33,12 +31,14 @@ public class PausedMenu : MonoBehaviour
         GameManager.instance.SetGamePaused(false);
 
         _pauseCanvas.SetActive(false);
+        StartCoroutine(CanJumpAgain());
     }
 
     public void Pause()
     {
         Time.timeScale = 0f;
         _ballMovement.canMove = false;
+        _ballMovement.canJump = false;
 
         AudioManager.instance.AudioPlay(_pauseClip);
         GameManager.instance.SetGamePaused(true);
@@ -54,5 +54,11 @@ public class PausedMenu : MonoBehaviour
         _pauseCanvas.SetActive(false);
 
         _changer.LoadScene();
+    }
+
+    IEnumerator CanJumpAgain()
+    {
+        yield return new WaitForSeconds (0.25f);
+        _ballMovement.canJump = true;
     }
 }
