@@ -79,6 +79,6 @@ public class BallMovement : MonoBehaviour
         _jumping++;
         _sphereRb.AddForce(0,1 * _jumpForce,0, ForceMode.Impulse);
 
-        AudioManager.instance.AudioPlayWithPos(_jumpSound, this.transform.position);
+        AudioManager.instance.AudioPlay(_jumpSound);
     }
 }

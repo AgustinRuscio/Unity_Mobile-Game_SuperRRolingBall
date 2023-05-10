@@ -23,6 +23,13 @@ public class Barrier : MonoBehaviour
     private SoundData _barrierAudioClose;
 
 
+    [SerializeField]
+    private AudioSource _barrierOpen;
+
+    [SerializeField]
+    private AudioSource _barrierClose;
+
+
     private void Awake() => EventManager.Subscribe(EventEnum.AddKey, UpdateKeys);
 
     private void OnCollisionEnter(Collision collision)
@@ -36,12 +43,15 @@ public class Barrier : MonoBehaviour
         if (_currentKeys >= _keysRequiere)
         {
             _myAnim.SetBool("Barrierup", true);
-            AudioManager.instance.AudioPlayWithPos(_barrierAudioOpen, this.transform.position);
+
+            _barrierOpen.Play();
+            // AudioManager.instance.AudioPlayWithPos(_barrierAudioOpen, this.transform.position);
 
             _myCollider.enabled = false;
         }
-        else if (_currentKeys < _keysRequiere)
-            AudioManager.instance.AudioPlayWithPos(_barrierAudioClose, this.transform.position);
+        else if (_currentKeys < _keysRequiere) _barrierClose.Play();
+            
+           // AudioManager.instance.AudioPlayWithPos(_barrierAudioClose, this.transform.position);
     }
 
     private void UpdateKeys(params  object[] parameters)

@@ -118,6 +118,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d2c607bda8abad48bbaa63e3c4239a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound:
+    clip: {fileID: 8300000, guid: a9cf69bad41612c4a877594ffe16b88f, type: 3}
+    mixerGroup: {fileID: -8280211464532639426, guid: 57b098ecb19ac9e49874b4963abbfe2c, type: 2}
+    loop: 0
+    sound3D: 0
+    maxDistance: 0
 --- !u!135 &2271868177228864138
 SphereCollider:
   m_ObjectHideFlags: 0
