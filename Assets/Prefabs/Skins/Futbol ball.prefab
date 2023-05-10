@@ -309,14 +309,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _jumpSound:
-    clip: {fileID: 0}
-    mixerGroup: {fileID: 0}
+    clip: {fileID: 8300000, guid: 410c10e0e5763c143bc6d54e1204e604, type: 3}
+    mixerGroup: {fileID: -8280211464532639426, guid: 57b098ecb19ac9e49874b4963abbfe2c, type: 2}
     loop: 0
     sound3D: 0
     maxDistance: 0
   _speed: 2
   _jumpForce: 5
-  canJump: 0
+  canJump: 1
+  canMove: 1
 --- !u!114 &2826565013568182013
 MonoBehaviour:
   m_ObjectHideFlags: 0
