@@ -3647,21 +3647,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b2cea6a5b6e3c4092a675e02022d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ball: {fileID: 0}
   _coreCanvas: {fileID: 3939383489915035105}
   _skinsList:
   - {fileID: 8724175106357845047, guid: f3d61d09f98224e46964facfa4e92029, type: 3}
   - {fileID: 1517782528126307678, guid: cc99018ebb1a691479616376202d3f8a, type: 3}
   - {fileID: 198928882128739140, guid: f91856ac0d4b86048aa0273a89dc5b57, type: 3}
   - {fileID: 4681158142614202787, guid: 290206c6d05a37c48bfef42bae53efa8, type: 3}
-  - {fileID: 4663505088011205741, guid: 82af7af7c40d3824abb864e83d1e5dcb, type: 3}
   - {fileID: 7345714149355501130, guid: dfea78f2f72cfb64a9e62e15a0fc7fd2, type: 3}
+  - {fileID: 4663505088011205741, guid: 82af7af7c40d3824abb864e83d1e5dcb, type: 3}
   - {fileID: 1349160171830415243, guid: ed5978bcc59639340898faeb399e83a6, type: 3}
   - {fileID: 0}
   _initialBallPos: {fileID: 0}
   _loseCanvas: {fileID: 6589725410072743352}
   _nextLevel: MainMenu
-  _levelCoins: 0
 --- !u!114 &1555022427
 MonoBehaviour:
   m_ObjectHideFlags: 0
