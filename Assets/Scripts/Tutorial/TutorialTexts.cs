@@ -33,13 +33,6 @@ public class TutorialTexts : MonoBehaviour
         _tutorialUI.SetActive(false);
         Time.timeScale = 1f;
         _ballMovement.canMove = true;
-        StartCoroutine(CanJumpAgain());
-    }
-
-    IEnumerator CanJumpAgain()
-    {
-        yield return new WaitForSeconds(0.25f);
         _ballMovement.canJump = true;
     }
-
 }

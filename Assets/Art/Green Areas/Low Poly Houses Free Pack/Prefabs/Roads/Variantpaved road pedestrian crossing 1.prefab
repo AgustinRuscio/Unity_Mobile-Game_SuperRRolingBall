@@ -11,6 +11,11 @@ GameObject:
   - component: {fileID: 889736124175128640}
   - component: {fileID: 4320959610208229349}
   - component: {fileID: 2023196600932066095}
+  - component: {fileID: 7234676053069949072}
+  - component: {fileID: 2430931070533966662}
+  - component: {fileID: 8047440469017352426}
+  - component: {fileID: 7810055193320152231}
+  - component: {fileID: 7389289932148908998}
   m_Layer: 0
   m_Name: Variantpaved road pedestrian crossing 1
   m_TagString: Untagged
@@ -83,3 +88,68 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7234676053069949072
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509798353978704634}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.000002, y: 2.2705686, z: 9.000002}
+  m_Center: {x: 0.00000023841864, y: 0.895, z: 0}
+--- !u!65 &2430931070533966662
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509798353978704634}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.95, y: 2.2705686, z: 4.54}
+  m_Center: {x: 3.3, y: 1.1352843, z: 2.27}
+--- !u!65 &8047440469017352426
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509798353978704634}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.95, y: 2.2705686, z: 4.54}
+  m_Center: {x: -3.3, y: 1.1352843, z: 2.27}
+--- !u!65 &7810055193320152231
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509798353978704634}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.95, y: 2.2705686, z: 1.05}
+  m_Center: {x: 3.3, y: 1.1352843, z: -4}
+--- !u!65 &7389289932148908998
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509798353978704634}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.95, y: 2.2705686, z: 1.05}
+  m_Center: {x: -3.3, y: 1.1352843, z: -4}

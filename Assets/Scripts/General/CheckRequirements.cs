@@ -9,6 +9,8 @@ public class CheckRequirements : MonoBehaviour
 
     private void Awake()
     {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
         /*if (!RequisitsTest())
         {
             _popUp.SetActive(true);

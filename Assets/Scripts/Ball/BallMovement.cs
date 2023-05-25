@@ -52,14 +52,6 @@ public class BallMovement : MonoBehaviour
         _sphereRb.AddForce(accelerationFixed);
 
         _timer.RunTimer();
-        
-        if (Input.touchCount > 0 && _jumping <= 0 && _timer.CheckCoolDown() && canJump)
-        {
-            Jump();
-
-            _timer.ResetTimer();
-            CheckJumping();
-        }
     }
 
     public void EnableDoubleJump(params object[] parameters)
@@ -74,11 +66,23 @@ public class BallMovement : MonoBehaviour
             EventManager.Trigger(EventEnum.DisableDoubleJump);
     }
     
-    private void Jump()
+    public void Jump()
     {
-        _jumping++;
-        _sphereRb.AddForce(0,1 * _jumpForce,0, ForceMode.Impulse);
+        if (_jumping <= 0 && _timer.CheckCoolDown() && canJump)
+        {
+            _jumping++;
+            _sphereRb.AddForce(0,1 * _jumpForce,0, ForceMode.Impulse);
 
-        AudioManager.instance.AudioPlay(_jumpSound);
+            AudioManager.instance.AudioPlay(_jumpSound);
+
+            _timer.ResetTimer();
+            CheckJumping();
+        }
+    }
+
+    public void Stop()
+    {
+        _sphereRb.velocity = Vector3.zero;
+        _sphereRb.angularVelocity = Vector3.zero;
     }
 }

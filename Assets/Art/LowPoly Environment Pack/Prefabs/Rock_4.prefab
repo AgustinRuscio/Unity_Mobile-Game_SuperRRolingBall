@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 23845645537503508}
   - component: {fileID: 64326202081095742}
   - component: {fileID: 2861305716212883142}
+  - component: {fileID: 6067339514019026479}
   m_Layer: 0
   m_Name: Rock_4
   m_TagString: Untagged
@@ -112,3 +113,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.044424, y: 3.15, z: 1.9945221}
   m_Center: {x: -0.115431696, y: 0.65, z: -0.10834625}
+--- !u!205 &6067339514019026479
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150461584060438}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.11543167, y: 0.22501469, z: -0.108346224}
+  m_Size: 2.044424
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.03828253
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23845645537503508}
+  m_Enabled: 1

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 425070}
   - component: {fileID: 3396894}
   - component: {fileID: 2378348}
+  - component: {fileID: 5841311089339390754}
   m_Layer: 0
   m_Name: Flat_Rock_01
   m_TagString: Untagged
@@ -83,3 +84,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!205 &5841311089339390754
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116276}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.060857594, y: 0.43856135, z: 0.08276415}
+  m_Size: 2.1054287
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.08211014
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 2378348}
+  m_Enabled: 1
