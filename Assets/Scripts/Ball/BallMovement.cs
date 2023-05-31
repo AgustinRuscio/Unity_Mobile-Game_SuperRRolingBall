@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -19,7 +20,7 @@ public class BallMovement : MonoBehaviour
     [SerializeField]
     private float _jumpForce ;
 
-    private float _coolDown = 1.5f;
+    private float _coolDown = 0.5f;
     
     private int _jumping = 0;
 
@@ -52,6 +53,11 @@ public class BallMovement : MonoBehaviour
         _sphereRb.AddForce(accelerationFixed);
 
         _timer.RunTimer();
+
+        if(Input.touchCount > 0)
+        {
+            Jump();
+        }
     }
 
     public void EnableDoubleJump(params object[] parameters)
@@ -71,9 +77,11 @@ public class BallMovement : MonoBehaviour
         if (_jumping <= 0 && _timer.CheckCoolDown() && canJump)
         {
             _jumping++;
-            _sphereRb.AddForce(0,1 * _jumpForce,0, ForceMode.Impulse);
+            _sphereRb.AddForce(0, 1 * _jumpForce ,0, ForceMode.Impulse);
 
             AudioManager.instance.AudioPlay(_jumpSound);
+
+            UnityEngine.Debug.Log("Trigger");
 
             _timer.ResetTimer();
             CheckJumping();

@@ -18888,6 +18888,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrier
       objectReference: {fileID: 0}
+    - target: {fileID: 8805721775515178350, guid: 43096a3f5167b0547b0bc245facb4d6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43096a3f5167b0547b0bc245facb4d6f, type: 3}
 --- !u!4 &1015423440 stripped

@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour
         else
             Destroy(gameObject);
 
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
         EventManager.Subscribe(EventEnum.AddCoin, AddLocalCoin);
 
         

@@ -9,7 +9,8 @@ public class GenericTimer
     private float coolDown;
 
     public GenericTimer(float _coolDown) => coolDown = _coolDown;
-    
+   
+
     public void RunTimer() => timer = timer + 1 * Time.deltaTime;
 
     public bool CheckCoolDown()
