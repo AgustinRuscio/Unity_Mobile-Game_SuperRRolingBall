@@ -18,4 +18,14 @@ public struct ConstantStrings
     public const string dictotionarySlot5 = "slot5";
     public const string dictotionarySlot6 = "slot6";
     public const string dictotionarySlot7 = "slot7";
+
+    //level savers
+    public const string unlockedLevel = "UnlockedLevel";
+    public const string reachedIndex = "ReachedIndex";
+
+    //para guardar el tiempo entre niveles.
+    public const string nextStaminaTime = "nextStaminaTime";
+    public const string lastStaminaTime = "lastStaminaTime";
+
+
 }

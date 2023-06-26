@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 
@@ -43,7 +42,7 @@ public class CanvasControllerMainMenu : MonoBehaviour
     private AudioMixer _master;
 
 
-    private void Awake() => _scenehanger = new SceneChanger().SetSceneToChangeName("Tutorial");
+    private void Awake() => _scenehanger = new SceneChanger().SetSceneToChangeName("Level1");
 
     public void Start()
     {

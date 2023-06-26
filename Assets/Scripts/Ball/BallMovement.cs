@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Audio;
+
+
 
 public class BallMovement : MonoBehaviour
 {
@@ -28,35 +27,58 @@ public class BallMovement : MonoBehaviour
 
     public bool canJump = true;
     public bool canMove = true;
-    
+   
+    [SerializeField]
+    private Camera mainCamera;
+
+  
+
     private void Awake()
     {
+        canJump = false;
+        mainCamera =  Camera.main;
+
         EventManager.Subscribe(EventEnum.EnableDoubleJump, EnableDoubleJump);
         _sphereRb = GetComponent<Rigidbody>();
-
         _timer = new GenericTimer(_coolDown);
+        StartCoroutine(CanJumpAgain());
 
-        canJump = true;
     }
 
     void Update()
     {
         if (!canMove) return;
 
+        
         Vector3 accelerationFixed =  Input.acceleration ;
-
         accelerationFixed = Quaternion.Euler(90, 0, 0) * accelerationFixed;
         accelerationFixed *= _speed;
-        
         accelerationFixed.y = 0;
         
         _sphereRb.AddForce(accelerationFixed);
-
         _timer.RunTimer();
 
-        if(Input.touchCount > 0)
+        if (Input.touchCount == 1 || Input.GetMouseButtonDown(0))
         {
-            Jump();
+            Touch touch = Input.GetTouch(0);
+            
+            Debug.Log("Entre al primer if y tiro el raycast");
+            Debug.Log(touch.position + "touch position");
+           
+            if (touch.position.x > Screen.width / 2 )
+            {
+                Debug.Log("Entre Jump");
+                Jump();
+                _timer.ResetTimer();
+                CheckJumping();
+            }
+            else 
+            {
+
+                Stop();
+                Debug.Log("Entre Stop");
+            }
+          
         }
     }
 
@@ -71,26 +93,40 @@ public class BallMovement : MonoBehaviour
         if(_jumping > 0)
             EventManager.Trigger(EventEnum.DisableDoubleJump);
     }
-    
-    public void Jump()
-    {
-        if (_jumping <= 0 && _timer.CheckCoolDown() && canJump)
-        {
-            _jumping++;
-            _sphereRb.AddForce(0, 1 * _jumpForce ,0, ForceMode.Impulse);
 
+
+
+     public void Jump()
+     {
+        
+         if (_jumping <= 0 && canJump && _timer.CheckCoolDown() )
+         {
+            _sphereRb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+            _jumping++;
+            
+           // _sphereRb.velocity = Vector3.up * _jumpForce;
+            Debug.Log(_jumping);
             AudioManager.instance.AudioPlay(_jumpSound);
 
-            UnityEngine.Debug.Log("Trigger");
+             UnityEngine.Debug.Log("salte");
 
-            _timer.ResetTimer();
-            CheckJumping();
-        }
-    }
+             _timer.ResetTimer();
+             CheckJumping();
+         }
+     }
 
     public void Stop()
     {
         _sphereRb.velocity = Vector3.zero;
         _sphereRb.angularVelocity = Vector3.zero;
     }
+    IEnumerator CanJumpAgain()
+    {
+        yield return new WaitForSeconds(0.5f);
+        canJump = true;
+    }
+
+
+ 
+
 }

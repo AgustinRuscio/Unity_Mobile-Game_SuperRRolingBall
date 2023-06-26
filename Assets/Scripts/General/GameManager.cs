@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         
         _currentSkin = PlayerPrefs.GetInt(ConstantStrings.currentSkin);
 
-        if (_levelName != "Tutorial")
+        if (_levelName != "Level1")
             Instantiate(_skinsList[_currentSkin], _initialBallPos.position, _initialBallPos.rotation);
 
         _ball = FindObjectOfType<BallStates>();

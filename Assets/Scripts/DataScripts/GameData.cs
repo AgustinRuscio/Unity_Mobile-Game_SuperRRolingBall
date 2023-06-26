@@ -2,14 +2,21 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class GameData : MonoBehaviour
 {
     public static GameData instance;
+
+    StaminaSystem _staminasystem;
     
     private int _coins = 0;
 
     private int _stamina;
+
+    DateTime nextStaminaTime;
+    DateTime lastStaminaTime;
 
     [SerializeField]
     private GameObject _deleteGamePopUp;
@@ -17,6 +24,7 @@ public class GameData : MonoBehaviour
     public Dictionary<int, int> skins = new Dictionary<int, int>();
 
     public int currentSkin;
+
 
     private void Awake()
     {
@@ -29,25 +37,11 @@ public class GameData : MonoBehaviour
         LoadGame();
     }
 
-    public float GetActualStamina()
-    {
-        return _stamina;
-    }
-
     public float GetActualCoins()
     {
         return _coins;
     }
-
-    public void SubstractStamina()
-    {
-        _stamina--;
-
-        if(_stamina < 0 )
-            _stamina = 0;
-
-        PlayerPrefs.SetInt(ConstantStrings.staminaKey, _stamina);
-    }
+      
 
     public void ObteinSkin(int index)
     {
@@ -109,7 +103,10 @@ public class GameData : MonoBehaviour
             _coins = PlayerPrefs.GetInt(ConstantStrings.coinKey);
             _stamina = PlayerPrefs.GetInt(ConstantStrings.staminaKey);
 
-            //Skins
+            nextStaminaTime = StringToDateTime(PlayerPrefs.GetString("nextStaminaTime"));
+            lastStaminaTime = StringToDateTime(PlayerPrefs.GetString("lastStaminaTime"));
+
+             //Skins
 
             currentSkin = PlayerPrefs.GetInt(ConstantStrings.currentSkin);
 
@@ -128,7 +125,7 @@ public class GameData : MonoBehaviour
             PlayerPrefs.SetInt(ConstantStrings.coinKey, 0);
             _coins = PlayerPrefs.GetInt(ConstantStrings.coinKey);
 
-            PlayerPrefs.SetInt(ConstantStrings.staminaKey, 5);
+            PlayerPrefs.SetInt(ConstantStrings.staminaKey, 6);
             _stamina = PlayerPrefs.GetInt(ConstantStrings.staminaKey);
 
             PlayerPrefs.SetInt(ConstantStrings.currentSkin, 0);
@@ -174,7 +171,7 @@ public class GameData : MonoBehaviour
     public void DeletegameData()
     {
         PlayerPrefs.SetInt(ConstantStrings.coinKey, 0);
-        PlayerPrefs.SetInt(ConstantStrings.staminaKey, 5);
+        PlayerPrefs.SetInt(ConstantStrings.staminaKey, 6);
         PlayerPrefs.SetInt(ConstantStrings.firstTimePlaying, 0);
 
         //Skins
@@ -186,13 +183,24 @@ public class GameData : MonoBehaviour
         PlayerPrefs.SetInt(ConstantStrings.dictotionarySlot6, 0);
         PlayerPrefs.SetInt(ConstantStrings.dictotionarySlot7, 0);
 
+        //levelints
+        PlayerPrefs.SetInt(ConstantStrings.unlockedLevel, 1);
+        PlayerPrefs.SetInt(ConstantStrings.reachedIndex, 1);
+
+        //reseteo de timers
+        PlayerPrefs.DeleteKey(ConstantStrings.nextStaminaTime);
+        PlayerPrefs.DeleteKey(ConstantStrings.lastStaminaTime);
+
+
+
         Debug.Log("Game Deleted");
 
         _deleteGamePopUp.SetActive(false);
-
-        EventManager.Trigger(EventEnum.UpdateValues);
-
         LoadGame();
+        SceneManager.LoadScene("MainMenue");
+        //EventManager.Trigger(EventEnum.UpdateValues);
+
+        
     }
     
     void OnApplicationQuit()
@@ -224,19 +232,6 @@ public class GameData : MonoBehaviour
         Debug.Log(_coins);
     }
 
-    public void AddStamina(int add = 5)
-    {
-        _stamina += add;
-
-        if(_stamina > 6)
-            _stamina = 6;
-
-        PlayerPrefs.SetInt(ConstantStrings.staminaKey, _stamina);
-
-        EventManager.Trigger(EventEnum.UpdateValues);
-
-        Debug.Log(_stamina);
-    }
 
     public void AddCoinsInput(int add = 5)
     {
@@ -261,4 +256,23 @@ public class GameData : MonoBehaviour
 
     #endregion
 
+    public float GetActualStamina()
+    {
+        return _stamina;
+    }
+
+
+    DateTime StringToDateTime(string date)
+    {
+        if (string.IsNullOrEmpty(date))
+        {
+            return DateTime.UtcNow;
+        }
+        else
+        {
+            return DateTime.Parse(date);
+
+        }
+
+    }
 }
