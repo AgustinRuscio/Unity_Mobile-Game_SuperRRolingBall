@@ -11,7 +11,9 @@ public class BallStates : MonoBehaviour, IFaneable
 
     [SerializeField]
     private Image _doubleJumpImage;
-    
+
+    private bool _death;
+
     private void Awake()
     {
         _ballRigidBody = GetComponent<Rigidbody>();
@@ -23,15 +25,20 @@ public class BallStates : MonoBehaviour, IFaneable
         EventManager.Subscribe(EventEnum.DisableDoubleJump, TurnOffJump);
     }
 
-    public bool DeathCondition()
-    {
-        return (transform.position.y < -5f);
-    }
+    public bool DeathCondition() => (transform.position.y < -5f);
     
+
+    public void SetDeath(bool death) => _death = death;
+
+    public bool Death() => _death;
+
     public void OnFan(Vector3 _airDir, float _strength) => _ballRigidBody.AddForce(_airDir * _strength);
     
 
     public void MakeTrigger() => _ballCollider.isTrigger = true;
+
+    public void Bounce(float force) => _ballRigidBody.AddForce(Vector3.up * force);
+    
 
     private void TurnOnDoubleJump(params object[] parameters) => _doubleJumpImage.color = Color.white;
     

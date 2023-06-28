@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
     private bool _paused;
 
     private string _levelName;
-    
 
     private void Awake()
     {
@@ -64,7 +63,7 @@ public class GameManager : MonoBehaviour
     {
         if (_paused) return;
 
-        if (_ball.DeathCondition())
+        if (_ball.DeathCondition() || _ball.Death())
             _loseCanvas.SetActive(true);
     }
 

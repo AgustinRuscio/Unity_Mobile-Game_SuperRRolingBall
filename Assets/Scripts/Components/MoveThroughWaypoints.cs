@@ -12,10 +12,7 @@ public class MoveThroughWaypoints : MonoBehaviour
     [SerializeField]
     private float _movementSpeed;
 
-    private void Update()
-    {
-        Move();
-    }
+    private void Update() => Move();
 
     private void Move()
     {

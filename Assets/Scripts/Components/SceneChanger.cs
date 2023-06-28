@@ -16,11 +16,13 @@ public class SceneChanger
 
     public void LoadScene()
     {
-        SceneManager.LoadScene(_sceneName);
+        LevelLoader.nextLevel = _sceneName;
+        SceneManager.LoadScene("LoadScene");
     }
 
     public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        LevelLoader.nextLevel = sceneName;
+        SceneManager.LoadScene("LoadScene");
     }
 }
