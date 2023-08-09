@@ -1,5 +1,9 @@
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
@@ -16,7 +20,7 @@ public class PausedMenu : MonoBehaviour
     [SerializeField]
     private GameObject _confirmationCanvasExit;
 
- [SerializeField]
+    [SerializeField]
     private SoundData _pauseClip;
 
     private string menu = "MainMenue";
@@ -110,7 +114,6 @@ public class PausedMenu : MonoBehaviour
         AudioManager.instance.AudioPlay(_pauseClip);
         _pauseCanvas.SetActive(false);
         _optionsCanvas.SetActive(true);
-
     }
 
     public void OptionsOff()
@@ -128,7 +131,6 @@ public class PausedMenu : MonoBehaviour
         log = Mathf.Log(value) * 20;
         _master.SetFloat("Master", log);
         PlayerPrefs.SetFloat("masterVol", value);
-
     }
 
     public void changeMusicVolumen(float value)
@@ -149,20 +151,13 @@ public class PausedMenu : MonoBehaviour
         _master.SetFloat("Fx", log);
 
         PlayerPrefs.SetFloat("fxVol", value);
-
-
     }
-
 
     public void ReturnToMainMenueOn()
     {
-
         AudioManager.instance.AudioPlay(_pauseClip);
         _confirmationCanvasExit.SetActive(true);
-
     }
-
-    
 
     IEnumerator CanJumpAgain()
     {

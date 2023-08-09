@@ -1,5 +1,9 @@
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 using TMPro;
@@ -36,8 +40,6 @@ public class StaminaSystem : MonoBehaviour
 
     private int _id;
 
-
-
     private void Awake()
     {
         _staminaText = GameObject.Find("Stamina Number").GetComponent<TextMeshProUGUI>(); 
@@ -49,14 +51,7 @@ public class StaminaSystem : MonoBehaviour
             Load();
         }
         else
-        {
             Destroy(this);
-        }
-
-       
-
-
-
     }
 
     private void Start()
@@ -67,13 +62,11 @@ public class StaminaSystem : MonoBehaviour
             PlayerPrefs.SetInt("Stamina", 6);
             Load();
             StartCoroutine(RechargeStamina());
-
         }
         else
         {
             Load();
             StartCoroutine(RechargeStamina());
-
         }
 
         if (_stamina < _maxStamina)//Noti
@@ -83,13 +76,11 @@ public class StaminaSystem : MonoBehaviour
                   AddDuration(DateTime.Now, ((_maxStamina - (_stamina) + 1) * _timeToRecharge) + 1 + (float)timer.TotalSeconds)); //Noti
             Debug.Log(_id + "if");
         }
-
     }
 
 
     public IEnumerator RechargeStamina()
     {
-           
         UpdateTimer();
         UpdateStamina();
 
@@ -113,13 +104,9 @@ public class StaminaSystem : MonoBehaviour
 
                     DateTime timeToAdd = lastStaminaTime > nextTime ? lastStaminaTime : nextTime; // chequeamos si la last es mayor que la next y si es asi, usara la last sino usara la next.
                     nextTime = AddDuration(timeToAdd, _timeToRecharge);
-
                 }
                 else
-                {
                     break;
-                }                                            
- 
             }
 
             if (staminaAdd == true)
@@ -136,39 +123,25 @@ public class StaminaSystem : MonoBehaviour
         
         NotificationManager.Instance.CancelNotification(_id); //Noti
         recharging = false;
+    }
+
+    private DateTime AddDuration(DateTime timeToAdd, float duration) => timeToAdd.AddSeconds(duration);
+
+
+    public void UpdateStamina() => _staminaText.text = _stamina.ToString() + "/" + _maxStamina.ToString();
         
-
-    }
-
-    private DateTime AddDuration(DateTime timeToAdd, float duration)
-    {
-        return timeToAdd.AddSeconds(duration);
-       // return timeToAdd.AddMinutes(duration); esto es para el juego real, segundos es para testeo.
-    }
-
-
-    public void UpdateStamina()
-    {
-        _staminaText.text = _stamina.ToString() + "/" + _maxStamina.ToString();
-        
-    }
-
-
-
     public void UpdateTimer()
     {
         if (_stamina >= _maxStamina)
         {
             _timerText.text = "Full";
             return;
-
         }
 
         timer = nextStaminaTime - DateTime.Now;
         string timeValue = string.Format("{0:D2}:{1:D1}", timer.Minutes, timer.Seconds);
         _timerText.text = timeValue;
     }
-
 
     void Save()
     {
@@ -187,16 +160,10 @@ public class StaminaSystem : MonoBehaviour
     DateTime StringToDateTime (string dateTime)
     {
         if (string.IsNullOrEmpty(dateTime))
-        {
             return DateTime.UtcNow;
-        }
         else
-        {
             return DateTime.Parse(dateTime);
-        }
-       
     }
-
 
     public void UseEnergy()
     {
@@ -217,17 +184,14 @@ public class StaminaSystem : MonoBehaviour
                 }
                 StartCoroutine(RechargeStamina());
                 Debug.Log("tenes " + _stamina + " actualmente");
-                
             }
-
         }
         else
-        {
             Debug.Log ("not enougth energy");
-        }
-
     }
+
     bool n = true;
+
     public void AddStamina()
     {
         if (n)
@@ -236,18 +200,17 @@ public class StaminaSystem : MonoBehaviour
             _stamina ++;
             Debug.Log(n);
         
-      
             if (_stamina > _maxStamina || _stamina ==_maxStamina)
             {
                 _stamina = _maxStamina;
                 _timerText.text = "Full";
             }
+
             PlayerPrefs.SetInt(ConstantStrings.staminaKey, _stamina);
             UpdateStamina();
             Debug.Log(_stamina);
             StartCoroutine(ChargeStamina());
         }
-
     }
 
 
@@ -263,19 +226,15 @@ public class StaminaSystem : MonoBehaviour
         UpdateStamina();
         Debug.Log(_stamina);
         StartCoroutine(ChargeStamina());
-
     }
-
 
     public void DeveloperRestStamina()
     {
         _stamina--;
 
         if (_stamina <= _minstamina)
-        {
             _stamina = _minstamina;
-                       
-        }
+
         PlayerPrefs.SetInt(ConstantStrings.staminaKey, _stamina);
         UpdateStamina();
 
@@ -284,18 +243,11 @@ public class StaminaSystem : MonoBehaviour
         UpdateTimer();
     }
 
-
-    public float GetActualStamina()
-    {
-        return _stamina;
-    }
-
-
+    public float GetActualStamina() =>  _stamina;
+    
     IEnumerator ChargeStamina()
     {
-
         yield return new WaitForSeconds(1);
         n = true;
-
     }
 }

@@ -1,5 +1,9 @@
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -31,7 +35,6 @@ public class BallMovement : MonoBehaviour
     [SerializeField]
     private Camera mainCamera;
 
-  
 
     private void Awake()
     {
@@ -41,15 +44,14 @@ public class BallMovement : MonoBehaviour
         EventManager.Subscribe(EventEnum.EnableDoubleJump, EnableDoubleJump);
         _sphereRb = GetComponent<Rigidbody>();
         _timer = new GenericTimer(_coolDown);
-        StartCoroutine(CanJumpAgain());
 
+        StartCoroutine(CanJumpAgain());
     }
 
     void Update()
     {
         if (!canMove) return;
 
-        
         Vector3 accelerationFixed =  Input.acceleration ;
         accelerationFixed = Quaternion.Euler(90, 0, 0) * accelerationFixed;
         accelerationFixed *= _speed;
@@ -67,18 +69,13 @@ public class BallMovement : MonoBehaviour
            
             if (touch.position.x > Screen.width / 2 )
             {
-                Debug.Log("Entre Jump");
                 Jump();
+
                 _timer.ResetTimer();
                 CheckJumping();
             }
             else 
-            {
-
                 Stop();
-                Debug.Log("Entre Stop");
-            }
-          
         }
     }
 
@@ -94,8 +91,6 @@ public class BallMovement : MonoBehaviour
             EventManager.Trigger(EventEnum.DisableDoubleJump);
     }
 
-
-
      public void Jump()
      {
         
@@ -104,7 +99,6 @@ public class BallMovement : MonoBehaviour
             _sphereRb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
             _jumping++;
             
-           // _sphereRb.velocity = Vector3.up * _jumpForce;
             Debug.Log(_jumping);
             AudioManager.instance.AudioPlay(_jumpSound);
 
@@ -125,8 +119,4 @@ public class BallMovement : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         canJump = true;
     }
-
-
- 
-
 }

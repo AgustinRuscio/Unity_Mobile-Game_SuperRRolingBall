@@ -1,6 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using UnityEngine;
 
 public class Keys : MonoBehaviour
@@ -15,29 +17,21 @@ public class Keys : MonoBehaviour
     [SerializeField]
     GameObject targetToMove;
 
-
     [SerializeField]
     float speedKeys;
 
     bool moveToKey = false;
 
 
-    private void Start()
-    {
-        targetToMove = FindObjectOfType<BallMovement>().gameObject;
-    }
+    private void Start() => targetToMove = FindObjectOfType<BallMovement>().gameObject;
+    
 
 
     private void Update()
     {
         if (moveToKey)
-        {
             transform.position = Vector3.Lerp(transform.position, targetToMove.transform.position, speedKeys * Time.deltaTime);
-
-        }
     }
-
-
 
     private void OnTriggerEnter(Collider other)
     {

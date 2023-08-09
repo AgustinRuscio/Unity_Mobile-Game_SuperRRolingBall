@@ -1,6 +1,9 @@
-using System.Collections;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using System.Collections.Generic;
-using UnityEngine;
 
 public static class EventManager
 {
@@ -23,10 +26,8 @@ public static class EventManager
         EventsContainer[eventName] -= observer;
     }
 
-    public static void Trigger(EventEnum eventName)
-    {
-        Trigger(eventName, null);
-    }
+    public static void Trigger(EventEnum eventName) => Trigger(eventName, null);
+    
 
     public static void Trigger(EventEnum eventName, params object[] parameters)
     {

@@ -1,6 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
 
 public enum EventEnum 
 {
@@ -9,6 +10,5 @@ public enum EventEnum
     DisableDoubleJump,
     AddKey,
     UpdateValues,
-    ChangeLevel,
-    
+    ChangeLevel
 }

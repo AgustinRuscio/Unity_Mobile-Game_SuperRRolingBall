@@ -1,7 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class Coin : MonoBehaviour
 {
@@ -18,20 +20,13 @@ public class Coin : MonoBehaviour
     [SerializeField]
     GameObject targetToMove;
 
-
-
-    private void Start()
-    {
-        targetToMove = FindObjectOfType<BallMovement>().gameObject;
-    }
+    private void Start() => targetToMove = FindObjectOfType<BallMovement>().gameObject;
+    
 
     private void Update()
     {
         if (moveToCoin)
-        {
             transform.position = Vector3.Lerp(transform.position, targetToMove.transform.position, speed * Time.deltaTime);
-           
-        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -48,7 +43,4 @@ public class Coin : MonoBehaviour
             Destroy(gameObject, 0.25f);
         }
     }
-
- 
-
 }

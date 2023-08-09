@@ -1,4 +1,8 @@
-using System.Collections;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;

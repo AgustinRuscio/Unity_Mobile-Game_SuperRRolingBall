@@ -1,6 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using UnityEngine;
 
 public class DoubleJump : MonoBehaviour
@@ -13,25 +15,18 @@ public class DoubleJump : MonoBehaviour
     [SerializeField]
     GameObject targetToMove;
 
-
     [SerializeField]
     float speedDJump;
 
     bool movetoDJump = false;
 
-    private void Start()
-    {
-        targetToMove = FindObjectOfType<BallMovement>().gameObject;
-    }
+    private void Start() => targetToMove = FindObjectOfType<BallMovement>().gameObject;
+    
 
     private void Update()
     {
         if (movetoDJump)
-        {
-            
             transform.position = Vector3.Lerp(transform.position, targetToMove.transform.position, speedDJump * Time.deltaTime);
-            Debug.Log("me muevo");
-        }
     }
 
     private void OnTriggerEnter(Collider other)

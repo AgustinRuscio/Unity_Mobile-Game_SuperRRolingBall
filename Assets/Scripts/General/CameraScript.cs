@@ -1,5 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using UnityEngine;
 
 public class CameraScript : MonoBehaviour
@@ -19,14 +22,7 @@ public class CameraScript : MonoBehaviour
 
         if (p != null)
             player = p.gameObject.transform;
-
-        
-
     }
 
-    void Update()
-    {
-        _cameraobj.transform.position = player.localToWorldMatrix.GetPosition() + maxDistance;
-    }
-
+    void Update() => _cameraobj.transform.position = player.localToWorldMatrix.GetPosition() + maxDistance;
 }

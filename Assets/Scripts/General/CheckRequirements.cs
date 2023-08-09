@@ -1,5 +1,9 @@
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CheckRequirements : MonoBehaviour
@@ -7,22 +11,9 @@ public class CheckRequirements : MonoBehaviour
     [SerializeField]
     private GameObject _popUp;
 
-    private void Awake()
-    {
-        Screen.sleepTimeout = SleepTimeout.NeverSleep;
-
-        /*if (!RequisitsTest())
-        {
-            _popUp.SetActive(true);
-            Debug.Log("Don't have the requirements");
-            QuitGame();
-        }*/
-    }
-
-    private bool RequisitsTest()
-    {
-        return SystemInfo.supportsAccelerometer;
-    }
+    private void Awake() => Screen.sleepTimeout = SleepTimeout.NeverSleep;
+    
+    private bool RequisitsTest() => SystemInfo.supportsAccelerometer;
 
     IEnumerator QuitGame()
     {

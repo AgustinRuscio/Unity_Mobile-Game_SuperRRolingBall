@@ -1,5 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
@@ -34,18 +37,14 @@ public class CanvasControllerMainMenu : MonoBehaviour
     [SerializeField]
     private GameObject _level1Canvas;
 
-
     [SerializeField]
     private GameObject _level2Canvas;
 
     [SerializeField]
     private GameObject _level3Canvas;
 
-
     [SerializeField]
     private GameObject _level4Canvas;
-
-
 
 
     [SerializeField]
@@ -106,49 +105,35 @@ public class CanvasControllerMainMenu : MonoBehaviour
         }
     }
 
-
-
-    
     public void LvlSelectorOff()
     {
         SoundClick();
         _levelsSelectorCanvas.SetActive(false);
     }
 
-
     public void CanvasLevel1()
     {
-
         _level1Canvas.SetActive(true);
         SoundClick();
-
     }
 
     public void CanvasLevel2()
     {
-
         _level2Canvas.SetActive(true);
         SoundClick();
-
     }
 
     public void CanvasLevel3()
     {
-
         _level3Canvas.SetActive(true);
         SoundClick();
-
     }
+    
     public void CanvasLevel4()
     {
-
         _level4Canvas.SetActive(true);
         SoundClick();
-
     }
-
-
-
 
     public void OptionsOn()
     {
@@ -167,8 +152,6 @@ public class CanvasControllerMainMenu : MonoBehaviour
         SoundClick();
         _exitCanvas.SetActive(true);
     }
-
- 
 
     public void CreditsOn()
     {
@@ -196,6 +179,7 @@ public class CanvasControllerMainMenu : MonoBehaviour
 
     public void StaminaOff()
     {
+        SoundClick();
         _notEnoughStaminaCanvas.SetActive(false);
     }
 
@@ -211,7 +195,6 @@ public class CanvasControllerMainMenu : MonoBehaviour
         log = Mathf.Log(value) * 20;
         _master.SetFloat("Master", log);
         PlayerPrefs.SetFloat("masterVol", value);
-
     }
 
     public void changeMusicVolumen(float value)
@@ -232,13 +215,7 @@ public class CanvasControllerMainMenu : MonoBehaviour
         _master.SetFloat("Fx", log);
 
         PlayerPrefs.SetFloat("fxVol", value);
-
-       
     }
-
-
-
-
 
     private void SoundClick() => AudioManager.instance.AudioPlay(_clip);
 }

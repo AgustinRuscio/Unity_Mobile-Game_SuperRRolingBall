@@ -1,5 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using UnityEngine;
 using UnityEngine.Advertisements;
 
@@ -20,7 +23,7 @@ public class ShowAdds : MonoBehaviour, IUnityAdsListener
     public void ShowAd()
     {
         if (!Advertisement.IsReady()) return;
-        Advertisement.Show(_adId);
+            Advertisement.Show(_adId);
     }
 
     public void OnUnityAdsReady(string placementId)
@@ -28,9 +31,7 @@ public class ShowAdds : MonoBehaviour, IUnityAdsListener
         if (placementId == _adId) Debug.Log("Ad is ready!");
     }
 
-    public void OnUnityAdsDidError(string message)
-    {
-    }
+    public void OnUnityAdsDidError(string message) { }
 
     public void OnUnityAdsDidStart(string placementId)
     {
@@ -47,18 +48,9 @@ public class ShowAdds : MonoBehaviour, IUnityAdsListener
                 Debug.Log("Take your currency!");
             }
             else if (showResult == ShowResult.Skipped)
-            {
                 Debug.Log("Take your half currency!");
-            }
             else
-            {
                 Debug.Log("Something is wrong!");
-            }
         }
     }
-
-
-
-
 }
- 

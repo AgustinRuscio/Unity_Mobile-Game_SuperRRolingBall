@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Data;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using UnityEngine;
-using UnityEngine.UI;
 using System;
 
 public class Shop : MonoBehaviour
 {
-   
-
     [SerializeField]
     private SoundData _soundButton;
 
@@ -42,12 +41,9 @@ public class Shop : MonoBehaviour
 
     private void Start()
     {
-
         ChackStatus();
         updateButtons += ChackStatus;
     }
-
-
 
     public void ChackStatus()
     {
@@ -71,11 +67,6 @@ public class Shop : MonoBehaviour
             comprarPanel.SetActive(true);
         }
         else
-        {
             noteAlzanaPanel.SetActive(true);
-        }
     }
-
-
-
 }

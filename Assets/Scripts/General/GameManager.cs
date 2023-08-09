@@ -1,5 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
@@ -40,9 +43,6 @@ public class GameManager : MonoBehaviour
 
     private string _levelName;
 
-
-
-    
 
     private void Awake()
     {
@@ -85,8 +85,6 @@ public class GameManager : MonoBehaviour
         ChangeScene();
     }
 
-
-
     private void AddLocalCoin(params object[] coins)
     {
         _levelCoins += (int)coins[0];
@@ -94,16 +92,11 @@ public class GameManager : MonoBehaviour
         _winCoins.text = _levelCoins.ToString();
     }
 
-    public int GetLevelCoins()
-    {
-        return _levelCoins;
-    }
-
+    public int GetLevelCoins() => _levelCoins;
+    
     public void SetGamePaused(bool ispaused) => _paused = ispaused;
     
-
     private void ChangeScene() => _changer.LoadScene();
     
-
     private void OnDestroy() => EventManager.Unsubscribe(EventEnum.AddCoin, AddLocalCoin);
 }

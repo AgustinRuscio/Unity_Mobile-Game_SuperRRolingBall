@@ -1,5 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using UnityEngine;
 
 public class EquipButton : MonoBehaviour
@@ -19,12 +22,6 @@ public class EquipButton : MonoBehaviour
 
             AudioManager.instance.AudioPlay(_soundButton);
             GameData.instance.SetSkin(_shopIndex);
-
-
         }
-
     }
-
-
-
 }

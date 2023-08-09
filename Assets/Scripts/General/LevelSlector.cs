@@ -1,5 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -25,7 +28,7 @@ public class LevelSlector : MonoBehaviour
 
     [SerializeField]
     private SoundData _soundButtonEnterLvl;
-     
+
     [SerializeField]
     private SoundData _soundButtonDeny;
 
@@ -33,14 +36,7 @@ public class LevelSlector : MonoBehaviour
     private GameObject _c;
 
 
-
-    private void Awake() 
-    {
-        _changer = new SceneChanger().SetSceneToChangeName(_nextLvl);
-      
-    }
-    
-
+    private void Awake() => _changer = new SceneChanger().SetSceneToChangeName(_nextLvl);
 
     public void ResetLevel()
     {
@@ -48,10 +44,9 @@ public class LevelSlector : MonoBehaviour
         _canvas.SetActive(false);
     }
 
-
     public void OpenLevel(int levelID)
     {
-        if (StaminaSystem.instance.GetActualStamina() > 0 )
+        if (StaminaSystem.instance.GetActualStamina() > 0)
         {
             AudioManager.instance.AudioPlay(_soundButtonEnterLvl);
             StaminaSystem.instance.UseEnergy();
@@ -61,41 +56,22 @@ public class LevelSlector : MonoBehaviour
 
             _changer.LoadScene();
         }
-       
-        
-
     }
 
     public void SoundForLevelLocked()
     {
 
         if (_myButton.interactable == false)
-        {
             AudioManager.instance.AudioPlay(_soundButtonDeny);
-        }
         else
-        {
             return;
-        }
-
     }
-
 
     public void OpenLevelCanvas()
     {
         if (StaminaSystem.instance.GetActualStamina() > 0)
-        {
-            //string levelName = "Level" + levelID;
             _confirmationLvlCanvas.SetActive(true);
-
-        }
         else
-        {
             _staminaCanvas.SetActive(true);
-        }
-
     }
-
-
-
 }

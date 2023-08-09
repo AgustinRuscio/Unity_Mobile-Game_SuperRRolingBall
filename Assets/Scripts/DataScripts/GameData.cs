@@ -1,5 +1,9 @@
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -37,12 +41,8 @@ public class GameData : MonoBehaviour
         LoadGame();
     }
 
-    public float GetActualCoins()
-    {
-        return _coins;
-    }
-      
-
+    public float GetActualCoins() => _coins;
+    
     public void ObteinSkin(int index)
     {
         switch (index)
@@ -158,15 +158,11 @@ public class GameData : MonoBehaviour
         }
     }
 
-    public void DeleteDataPopUp()
-    {
-        _deleteGamePopUp.SetActive(true);
-    }
+    public void DeleteDataPopUp() => _deleteGamePopUp.SetActive(true);
+    
 
-    public void CancelDeleting()
-    {
-        _deleteGamePopUp.SetActive(false);
-    }
+    public void CancelDeleting() => _deleteGamePopUp.SetActive(false);
+    
 
     public void DeletegameData()
     {
@@ -198,22 +194,15 @@ public class GameData : MonoBehaviour
         _deleteGamePopUp.SetActive(false);
         LoadGame();
         SceneManager.LoadScene("MainMenue");
-        //EventManager.Trigger(EventEnum.UpdateValues);
-
-        
     }
     
-    void OnApplicationQuit()
-    {
-        SaveGame();
-    }
+    void OnApplicationQuit() => SaveGame();
+    
 
     void OnApplicationPause(bool isPaused)
     {
         if (isPaused)
-        {
             SaveGame();
-        }
         else { }
     }
         
@@ -256,23 +245,13 @@ public class GameData : MonoBehaviour
 
     #endregion
 
-    public float GetActualStamina()
-    {
-        return _stamina;
-    }
-
-
+    public float GetActualStamina() => _stamina;
+    
     DateTime StringToDateTime(string date)
     {
         if (string.IsNullOrEmpty(date))
-        {
             return DateTime.UtcNow;
-        }
         else
-        {
             return DateTime.Parse(date);
-
-        }
-
     }
 }

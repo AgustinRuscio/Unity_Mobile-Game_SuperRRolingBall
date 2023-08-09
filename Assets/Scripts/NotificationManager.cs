@@ -1,5 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using UnityEngine;
 using Unity.Notifications.Android;
 using System;
@@ -13,10 +16,7 @@ public class NotificationManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }            
+        if (Instance == null) Instance = this;
         else Destroy(this);
 
         AndroidNotificationCenter.CancelAllDisplayedNotifications();
@@ -34,30 +34,19 @@ public class NotificationManager : MonoBehaviour
         AndroidNotificationCenter.RegisterNotificationChannel(notifChannel);
 
         DisplayNotification("Te extrañamos!", "Volve a jugar con nosotros", DateTime.Now.AddDays(3));
-
-
-
     }
-
-   
-   
-
 
     public int DisplayNotification(string tittle, string text, DateTime fireTime)
     {
         var notification = new AndroidNotification();
         notification.Title = tittle;
         notification.Text = text;
-        notification.SmallIcon = ""; // falta poner los iconos en proyectr settings - mobile notifications
+        notification.SmallIcon = "";
         notification.LargeIcon= "";
-        notification.FireTime = fireTime; //cambiar a horas para unn juego normal, ponemos seconds para testeo de este.
+        notification.FireTime = fireTime;
 
         return AndroidNotificationCenter.SendNotification(notification, notifChannel.Id);
-
     }
 
-    public void CancelNotification(int id)
-    {
-        AndroidNotificationCenter.CancelScheduledNotification(id);
-    }
+    public void CancelNotification(int id) => AndroidNotificationCenter.CancelScheduledNotification(id);
 }

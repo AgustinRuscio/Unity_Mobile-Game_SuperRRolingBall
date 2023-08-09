@@ -1,6 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
 
 public struct ConstantStrings 
 {
@@ -26,6 +27,4 @@ public struct ConstantStrings
     //para guardar el tiempo entre niveles.
     public const string nextStaminaTime = "nextStaminaTime";
     public const string lastStaminaTime = "lastStaminaTime";
-
-
 }

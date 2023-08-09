@@ -1,7 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using UnityEngine;
 
 public class Barrier : MonoBehaviour
@@ -23,9 +24,6 @@ public class Barrier : MonoBehaviour
     private SoundData _barrierAudioClose;
 
 
-    
-
-
     private void Awake() => EventManager.Subscribe(EventEnum.AddKey, UpdateKeys);
 
     private void OnCollisionEnter(Collision collision)
@@ -41,19 +39,13 @@ public class Barrier : MonoBehaviour
             _myAnim.SetBool("Barrierup", true);
             AudioManager.instance.AudioPlay(_barrierAudioOpen);
             
-            
-
             _myCollider.enabled = false;
         }
-        else if (_currentKeys < _keysRequiere) AudioManager.instance.AudioPlay(_barrierAudioClose);
-
-        
+        else if (_currentKeys < _keysRequiere) 
+            AudioManager.instance.AudioPlay(_barrierAudioClose);
     }
 
-    private void UpdateKeys(params  object[] parameters)
-    {
-        _currentKeys += (int)parameters[0];
-    }
-
+    private void UpdateKeys(params  object[] parameters) => _currentKeys += (int)parameters[0];
+    
     private void OnDestroy() => EventManager.Unsubscribe(EventEnum.AddKey, UpdateKeys);
 }

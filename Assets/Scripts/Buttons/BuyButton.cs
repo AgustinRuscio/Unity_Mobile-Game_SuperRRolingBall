@@ -1,11 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using UnityEngine;
 using System;
 
 public class BuyButton : MonoBehaviour
 {
-
     int index;
     int cost;
 
@@ -23,18 +25,13 @@ public class BuyButton : MonoBehaviour
 
     public void confirmbuy()
     {
-
         GameData.instance.SubstractCoins(cost);
         GameData.instance.ObteinSkin(index);
         GameData.instance.skins[index] = 1;
-
-       
-          
 
         EventManager.Trigger(EventEnum.UpdateValues);
         AudioManager.instance.AudioPlay(_soundButton);
 
         _onClick();
-
     }
 }

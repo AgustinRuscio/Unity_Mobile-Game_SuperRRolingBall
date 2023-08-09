@@ -1,5 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+//--------------------------------------------
+//          Agustin Ruscio
+//--------------------------------------------
+
+
 using UnityEngine;
 
 public class GenericTimer

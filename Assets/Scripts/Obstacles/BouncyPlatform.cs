@@ -1,5 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+//--------------------------------------------
+//          Agustin Ruscio & Merdeces Riego
+//--------------------------------------------
+
+
 using UnityEngine;
 
 public class BouncyPlatform : MonoBehaviour
@@ -7,7 +10,6 @@ public class BouncyPlatform : MonoBehaviour
     [SerializeField]
     private float _bounceForce;
 
-    
     private AudioSource _bounceSound;
 
     private Animator _bounceAnimator;
