@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &211487285170437110
+--- !u!1 &8261508811039212895
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,26 +8,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 694832233389236556}
-  - component: {fileID: 4470756843125681897}
-  - component: {fileID: 1868895853762566691}
-  - component: {fileID: -1905388173708410090}
-  - component: {fileID: 5127956491391465900}
-  - component: {fileID: 3528799853170317794}
+  - component: {fileID: 8785703541893292005}
+  - component: {fileID: 5639295391913463872}
+  - component: {fileID: 7612836052732945546}
+  - component: {fileID: 9143247737919548564}
+  - component: {fileID: 5051361989858319712}
   m_Layer: 0
-  m_Name: bridge_small
+  m_Name: lamppost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &694832233389236556
+--- !u!4 &8785703541893292005
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 211487285170437110}
+  m_GameObject: {fileID: 8261508811039212895}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -36,21 +35,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4470756843125681897
+--- !u!33 &5639295391913463872
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 211487285170437110}
-  m_Mesh: {fileID: -7805217742864635275, guid: 00606f1d23ade4ec786bd9e8b32f25e9, type: 3}
---- !u!23 &1868895853762566691
+  m_GameObject: {fileID: 8261508811039212895}
+  m_Mesh: {fileID: -5950111047842427467, guid: 88ad54f9e15a2b141a56c0e56a35ada8, type: 3}
+--- !u!23 &7612836052732945546
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 211487285170437110}
+  m_GameObject: {fileID: 8261508811039212895}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -64,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8787378045926028878, guid: 00606f1d23ade4ec786bd9e8b32f25e9, type: 3}
+  - {fileID: 2100000, guid: 1cd256ba8acac3a4bb49758d889d920e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,42 +85,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &-1905388173708410090
+--- !u!65 &9143247737919548564
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 211487285170437110}
+  m_GameObject: {fileID: 8261508811039212895}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 12.1464, y: 3.5758538, z: 12.1464}
-  m_Center: {x: -0.0000071525574, y: 0.86, z: 0.00075531006}
---- !u!65 &5127956491391465900
-BoxCollider:
+  m_Size: {x: 0.6427777, y: 2.974127, z: 0.6427776}
+  m_Center: {x: 0, y: 1.4870635, z: 0.00000086426735}
+--- !u!205 &5051361989858319712
+LODGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 211487285170437110}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
+  m_GameObject: {fileID: 8261508811039212895}
   serializedVersion: 2
-  m_Size: {x: 2.76, y: 3.5758538, z: 12.146403}
-  m_Center: {x: -6.1, y: 4.09, z: 0.00075912493}
---- !u!65 &3528799853170317794
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 211487285170437110}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_LocalReferencePoint: {x: 0, y: 1.4870635, z: 0.00000086426735}
+  m_Size: 2.974127
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.12006587
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 7612836052732945546}
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.76, y: 3.5758538, z: 12.146403}
-  m_Center: {x: 6.14, y: 4.09, z: 0.00075912493}

@@ -10,6 +10,30 @@ public class Coin : MonoBehaviour
     [SerializeField]
     private AudioSource _coinSound;
 
+    [SerializeField]
+    float speed;
+
+    bool moveToCoin =  false;
+
+    [SerializeField]
+    GameObject targetToMove;
+
+
+
+    private void Start()
+    {
+        targetToMove = FindObjectOfType<BallMovement>().gameObject;
+    }
+
+    private void Update()
+    {
+        if (moveToCoin)
+        {
+            transform.position = Vector3.Lerp(transform.position, targetToMove.transform.position, speed * Time.deltaTime);
+           
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         var ball = other.gameObject.GetComponent<BallMovement>();
@@ -18,8 +42,13 @@ public class Coin : MonoBehaviour
         {
             EventManager.Trigger(EventEnum.AddCoin, sum);
             _coinSound.Play();
+            gameObject.GetComponent<BoxCollider>().enabled = false;
+            moveToCoin = true;
             
-            Destroy(gameObject, 0.3f);
+            Destroy(gameObject, 0.25f);
         }
     }
+
+ 
+
 }

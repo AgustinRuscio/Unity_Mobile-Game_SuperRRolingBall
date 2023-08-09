@@ -9,6 +9,7 @@ public class StaminaSystem : MonoBehaviour
     public static StaminaSystem instance;
 
     private int _maxStamina = 6;
+    private int _minstamina = 0;
 
     private int _stamina; //current
 
@@ -52,17 +53,27 @@ public class StaminaSystem : MonoBehaviour
             Destroy(this);
         }
 
-        
+       
+
+
+
+    }
+
+    private void Start()
+    {
+
         if (!PlayerPrefs.HasKey("Stamina"))
         {
             PlayerPrefs.SetInt("Stamina", 6);
             Load();
             StartCoroutine(RechargeStamina());
+
         }
         else
         {
             Load();
             StartCoroutine(RechargeStamina());
+
         }
 
         if (_stamina < _maxStamina)//Noti
@@ -72,9 +83,8 @@ public class StaminaSystem : MonoBehaviour
                   AddDuration(DateTime.Now, ((_maxStamina - (_stamina) + 1) * _timeToRecharge) + 1 + (float)timer.TotalSeconds)); //Noti
             Debug.Log(_id + "if");
         }
-    }
 
-   
+    }
 
 
     public IEnumerator RechargeStamina()
@@ -217,12 +227,34 @@ public class StaminaSystem : MonoBehaviour
         }
 
     }
-
-    public void AddStamina(int add)
+    bool n = true;
+    public void AddStamina()
     {
-        _stamina += add;
+        if (n)
+        {
+            n = false;  
+            _stamina ++;
+            Debug.Log(n);
+        
       
-        if (_stamina > _maxStamina || _stamina ==_maxStamina)
+            if (_stamina > _maxStamina || _stamina ==_maxStamina)
+            {
+                _stamina = _maxStamina;
+                _timerText.text = "Full";
+            }
+            PlayerPrefs.SetInt(ConstantStrings.staminaKey, _stamina);
+            UpdateStamina();
+            Debug.Log(_stamina);
+            StartCoroutine(ChargeStamina());
+        }
+
+    }
+
+
+    public void DeveloperAddStamina()
+    {
+        _stamina++;
+        if (_stamina > _maxStamina || _stamina == _maxStamina)
         {
             _stamina = _maxStamina;
             _timerText.text = "Full";
@@ -230,6 +262,26 @@ public class StaminaSystem : MonoBehaviour
         PlayerPrefs.SetInt(ConstantStrings.staminaKey, _stamina);
         UpdateStamina();
         Debug.Log(_stamina);
+        StartCoroutine(ChargeStamina());
+
+    }
+
+
+    public void DeveloperRestStamina()
+    {
+        _stamina--;
+
+        if (_stamina <= _minstamina)
+        {
+            _stamina = _minstamina;
+                       
+        }
+        PlayerPrefs.SetInt(ConstantStrings.staminaKey, _stamina);
+        UpdateStamina();
+
+        Debug.Log(_stamina);
+        StartCoroutine(ChargeStamina());
+        UpdateTimer();
     }
 
 
@@ -238,4 +290,12 @@ public class StaminaSystem : MonoBehaviour
         return _stamina;
     }
 
+
+    IEnumerator ChargeStamina()
+    {
+
+        yield return new WaitForSeconds(1);
+        n = true;
+
+    }
 }

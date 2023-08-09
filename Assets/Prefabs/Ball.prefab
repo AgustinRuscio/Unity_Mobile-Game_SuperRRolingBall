@@ -1011,7 +1011,7 @@ GameObject:
   - component: {fileID: 8724175106357845054}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1129,12 +1129,10 @@ MonoBehaviour:
     loop: 0
     sound3D: 0
     maxDistance: 0
-  _speed: 3
+  _speed: 7
   _jumpForce: 7
   canJump: 1
   canMove: 1
-  colliderStop: {fileID: 444486500267966510}
-  colliderJump: {fileID: 3249010082499778026}
   mainCamera: {fileID: 4260553789028643795, guid: d00a573d9b10f8a49bacd3b20b3e241f, type: 3}
 --- !u!114 &8724175106357845054
 MonoBehaviour:

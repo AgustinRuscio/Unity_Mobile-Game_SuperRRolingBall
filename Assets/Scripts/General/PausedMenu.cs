@@ -14,6 +14,9 @@ public class PausedMenu : MonoBehaviour
     private GameObject _pauseCanvas;
 
     [SerializeField]
+    private GameObject _confirmationCanvasExit;
+
+ [SerializeField]
     private SoundData _pauseClip;
 
     private string menu = "MainMenue";
@@ -36,8 +39,36 @@ public class PausedMenu : MonoBehaviour
 
     private void Awake() => _changer = new SceneChanger().SetSceneToChangeName(menu);
 
-    private void Start() => _ballMovement = FindObjectOfType<BallMovement>();
-    
+    private void Start() 
+    {
+        _ballMovement = FindObjectOfType<BallMovement>();
+
+        if (PlayerPrefs.GetFloat("masterVol") != default)
+        {
+            _masterSlider.value = PlayerPrefs.GetFloat("masterVol");
+            _master.SetFloat("Master", Mathf.Log(_masterSlider.value) * 20);
+        }
+        else
+            _masterSlider.value = _masterSlider.maxValue * .5f;
+
+        if (PlayerPrefs.GetFloat("musicVol") != default)
+        {
+            _musicSlider.value = PlayerPrefs.GetFloat("musicVol");
+            _master.SetFloat("Music", Mathf.Log(_musicSlider.value) * 20);
+        }
+        else
+            _musicSlider.value = _masterSlider.maxValue * .5f;
+
+
+        if (PlayerPrefs.GetFloat("fxVol") != default)
+        {
+            _fxSlider.value = PlayerPrefs.GetFloat("fxVol");
+            _master.SetFloat("Fx", Mathf.Log(_fxSlider.value) * 20);
+        }
+        else
+            _fxSlider.value = _masterSlider.maxValue * .5f;
+    }
+
 
     public void Resume()
     {
@@ -121,6 +152,17 @@ public class PausedMenu : MonoBehaviour
 
 
     }
+
+
+    public void ReturnToMainMenueOn()
+    {
+
+        AudioManager.instance.AudioPlay(_pauseClip);
+        _confirmationCanvasExit.SetActive(true);
+
+    }
+
+    
 
     IEnumerator CanJumpAgain()
     {

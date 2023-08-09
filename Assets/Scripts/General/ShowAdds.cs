@@ -43,7 +43,7 @@ public class ShowAdds : MonoBehaviour, IUnityAdsListener
         {
             if (showResult == ShowResult.Finished)
             {
-                StaminaSystem.instance.AddStamina(1);
+                StaminaSystem.instance.AddStamina();
                 Debug.Log("Take your currency!");
             }
             else if (showResult == ShowResult.Skipped)

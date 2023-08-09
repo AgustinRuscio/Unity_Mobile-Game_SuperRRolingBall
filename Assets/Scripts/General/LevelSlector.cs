@@ -15,6 +15,9 @@ public class LevelSlector : MonoBehaviour
     private GameObject _staminaCanvas;
 
     [SerializeField]
+    private GameObject _confirmationLvlCanvas;
+
+    [SerializeField]
     private string _nextLvl;
 
     [SerializeField]
@@ -26,7 +29,10 @@ public class LevelSlector : MonoBehaviour
     [SerializeField]
     private SoundData _soundButtonDeny;
 
-    
+    [SerializeField]
+    private GameObject _c;
+
+
 
     private void Awake() 
     {
@@ -48,15 +54,14 @@ public class LevelSlector : MonoBehaviour
         if (StaminaSystem.instance.GetActualStamina() > 0 )
         {
             AudioManager.instance.AudioPlay(_soundButtonEnterLvl);
-            StaminaSystem.instance.UseEnergy(); 
+            StaminaSystem.instance.UseEnergy();
 
             string levelName = "Level" + levelID;
             SceneManager.LoadScene(levelName);
-            
+
             _changer.LoadScene();
         }
-        else
-            _staminaCanvas.SetActive(true);
+       
         
 
     }
@@ -76,7 +81,20 @@ public class LevelSlector : MonoBehaviour
     }
 
 
+    public void OpenLevelCanvas()
+    {
+        if (StaminaSystem.instance.GetActualStamina() > 0)
+        {
+            //string levelName = "Level" + levelID;
+            _confirmationLvlCanvas.SetActive(true);
 
+        }
+        else
+        {
+            _staminaCanvas.SetActive(true);
+        }
+
+    }
 
 
 

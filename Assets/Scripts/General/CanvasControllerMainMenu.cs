@@ -26,7 +26,26 @@ public class CanvasControllerMainMenu : MonoBehaviour
     private GameObject _optionsCanvas;
 
     [SerializeField]
+    private GameObject _exitCanvas;
+
+    [SerializeField]
     private SceneChanger _scenehanger;
+
+    [SerializeField]
+    private GameObject _level1Canvas;
+
+
+    [SerializeField]
+    private GameObject _level2Canvas;
+
+    [SerializeField]
+    private GameObject _level3Canvas;
+
+
+    [SerializeField]
+    private GameObject _level4Canvas;
+
+
 
 
     [SerializeField]
@@ -46,15 +65,30 @@ public class CanvasControllerMainMenu : MonoBehaviour
 
     public void Start()
     {
-        _masterSlider.value = PlayerPrefs.GetFloat("masterVol");
-        _master.SetFloat("Master", Mathf.Log(_masterSlider.value) * 20);
+        if(PlayerPrefs.GetFloat("masterVol") != default)
+        {
+            _masterSlider.value = PlayerPrefs.GetFloat("masterVol");
+            _master.SetFloat("Master", Mathf.Log(_masterSlider.value) * 20);
+        }
+        else
+            _masterSlider.value = _masterSlider.maxValue * .5f;
 
-        _musicSlider.value = PlayerPrefs.GetFloat("musicVol");
-        _master.SetFloat("Music", Mathf.Log(_musicSlider.value) * 20);
+        if (PlayerPrefs.GetFloat("musicVol") != default)
+        {
+            _musicSlider.value = PlayerPrefs.GetFloat("musicVol");
+            _master.SetFloat("Music", Mathf.Log(_musicSlider.value) * 20);
+        }
+        else
+            _musicSlider.value = _masterSlider.maxValue * .5f;
 
-        _fxSlider.value = PlayerPrefs.GetFloat("fxVol");
-        _master.SetFloat("Fx", Mathf.Log(_fxSlider.value) * 20);
 
+        if (PlayerPrefs.GetFloat("fxVol") != default)
+        {
+            _fxSlider.value = PlayerPrefs.GetFloat("fxVol");
+            _master.SetFloat("Fx", Mathf.Log(_fxSlider.value) * 20);
+        }
+        else
+            _fxSlider.value = _masterSlider.maxValue * .5f;
     }
 
 
@@ -71,12 +105,50 @@ public class CanvasControllerMainMenu : MonoBehaviour
             _levelsSelectorCanvas.SetActive(true);
         }
     }
+
+
+
     
     public void LvlSelectorOff()
     {
         SoundClick();
         _levelsSelectorCanvas.SetActive(false);
     }
+
+
+    public void CanvasLevel1()
+    {
+
+        _level1Canvas.SetActive(true);
+        SoundClick();
+
+    }
+
+    public void CanvasLevel2()
+    {
+
+        _level2Canvas.SetActive(true);
+        SoundClick();
+
+    }
+
+    public void CanvasLevel3()
+    {
+
+        _level3Canvas.SetActive(true);
+        SoundClick();
+
+    }
+    public void CanvasLevel4()
+    {
+
+        _level4Canvas.SetActive(true);
+        SoundClick();
+
+    }
+
+
+
 
     public void OptionsOn()
     {
@@ -89,7 +161,15 @@ public class CanvasControllerMainMenu : MonoBehaviour
         SoundClick();
         _optionsCanvas.SetActive(false);
     }
-   
+
+    public void ExitOn()
+    {
+        SoundClick();
+        _exitCanvas.SetActive(true);
+    }
+
+ 
+
     public void CreditsOn()
     {
         SoundClick();
@@ -155,6 +235,10 @@ public class CanvasControllerMainMenu : MonoBehaviour
 
        
     }
+
+
+
+
 
     private void SoundClick() => AudioManager.instance.AudioPlay(_clip);
 }

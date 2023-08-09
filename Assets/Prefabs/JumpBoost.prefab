@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2271868177228864136}
   - component: {fileID: 2271868177228864137}
   - component: {fileID: 2271868177228864138}
+  - component: {fileID: 8617327866999190712}
   m_Layer: 0
   m_Name: JumpBoost
   m_TagString: Untagged
@@ -125,6 +126,8 @@ MonoBehaviour:
     loop: 0
     sound3D: 0
     maxDistance: 0
+  targetToMove: {fileID: 0}
+  speedDJump: 1
 --- !u!135 &2271868177228864138
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -138,6 +141,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.012375004
   m_Center: {x: 0, y: 0, z: 0.0036250013}
+--- !u!65 &8617327866999190712
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549960067730558872}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08, y: 0.08, z: 0.024750005}
+  m_Center: {x: 0, y: -5.1514353e-17, z: 0.0036250008}
 --- !u!1001 &3275326845103582265
 PrefabInstance:
   m_ObjectHideFlags: 0

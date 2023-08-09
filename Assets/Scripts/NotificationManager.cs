@@ -32,18 +32,14 @@ public class NotificationManager : MonoBehaviour
         };
 
         AndroidNotificationCenter.RegisterNotificationChannel(notifChannel);
+
         DisplayNotification("Te extrañamos!", "Volve a jugar con nosotros", DateTime.Now.AddDays(3));
 
 
 
     }
 
-    void Start()
-    {
-       
-      
-    }
-
+   
    
 
 

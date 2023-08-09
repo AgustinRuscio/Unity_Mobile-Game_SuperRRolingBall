@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3335187683283520383}
   m_Layer: 0
   m_Name: Golf Ball
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -212,10 +212,11 @@ MonoBehaviour:
     loop: 0
     sound3D: 0
     maxDistance: 0
-  _speed: 2
+  _speed: 7
   _jumpForce: 5
   canJump: 1
   canMove: 1
+  mainCamera: {fileID: 0}
 --- !u!114 &3335187683283520383
 MonoBehaviour:
   m_ObjectHideFlags: 0

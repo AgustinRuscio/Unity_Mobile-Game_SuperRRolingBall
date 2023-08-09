@@ -42,7 +42,9 @@
                 "Id": "icon_0",
                 "Type": 0,
                 "Asset": {
-                    "instanceID": 0
+                    "fileID": 2800000,
+                    "guid": "0f1c9a12872a30f45bab34f536332bb3",
+                    "type": 3
                 }
             }
         ]

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+
+
 
 public class GameManager : MonoBehaviour
 {
@@ -26,6 +29,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private string _nextLevel;
 
+    [SerializeField]
+    private TMP_Text _winCoins;
+
     private int _levelCoins;
 
     private int _currentSkin;
@@ -33,6 +39,10 @@ public class GameManager : MonoBehaviour
     private bool _paused;
 
     private string _levelName;
+
+
+
+    
 
     private void Awake()
     {
@@ -75,10 +85,13 @@ public class GameManager : MonoBehaviour
         ChangeScene();
     }
 
+
+
     private void AddLocalCoin(params object[] coins)
     {
         _levelCoins += (int)coins[0];
         _coreCanvas.UpdateCanvas(_levelCoins);
+        _winCoins.text = _levelCoins.ToString();
     }
 
     public int GetLevelCoins()

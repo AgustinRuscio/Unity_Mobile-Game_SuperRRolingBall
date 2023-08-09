@@ -5841,6 +5841,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5605498835840261208, guid: 2367855bef699374186a150391a80e7c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605498835840261208, guid: 2367855bef699374186a150391a80e7c, type: 3}
+      propertyPath: m_Size.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605498835840261208, guid: 2367855bef699374186a150391a80e7c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6253889157034179983, guid: 2367855bef699374186a150391a80e7c, type: 3}
       propertyPath: m_Name
       value: Key (1)
@@ -5887,6 +5899,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6737833236862347061, guid: 2367855bef699374186a150391a80e7c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7677059326475870613, guid: 2367855bef699374186a150391a80e7c, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6626,7 +6642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 920467730228525464, guid: 454bdb31034657349a998cb28f78223a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.555521
+      value: 1.08
       objectReference: {fileID: 0}
     - target: {fileID: 920467730228525464, guid: 454bdb31034657349a998cb28f78223a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6634,7 +6650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 920467730228525464, guid: 454bdb31034657349a998cb28f78223a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -31.18035
+      value: -35.2
       objectReference: {fileID: 0}
     - target: {fileID: 920467730228525464, guid: 454bdb31034657349a998cb28f78223a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17572,7 +17588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 920467730228525464, guid: 454bdb31034657349a998cb28f78223a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.555521
+      value: -0.56
       objectReference: {fileID: 0}
     - target: {fileID: 920467730228525464, guid: 454bdb31034657349a998cb28f78223a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17580,7 +17596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 920467730228525464, guid: 454bdb31034657349a998cb28f78223a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -43.26
+      value: -50.55
       objectReference: {fileID: 0}
     - target: {fileID: 920467730228525464, guid: 454bdb31034657349a998cb28f78223a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -27138,6 +27154,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1299462541}
     m_Modifications:
+    - target: {fileID: 7458965256911849555, guid: 3a6fbf0f1b80fae4eb2b43d1223977dc, type: 3}
+      propertyPath: _airDir.z
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 8449737634542561056, guid: 3a6fbf0f1b80fae4eb2b43d1223977dc, type: 3}
       propertyPath: _waypoints.Array.data[0]
       value: 
@@ -35183,6 +35203,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1299462541}
     m_Modifications:
+    - target: {fileID: 2271868177228864138, guid: f965d037cec6c2f4d938063e7a59989a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2549960067730558872, guid: f965d037cec6c2f4d938063e7a59989a, type: 3}
       propertyPath: m_Name
       value: JumpBoost
@@ -41065,6 +41089,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1299462541}
     m_Modifications:
+    - target: {fileID: 7458965256911849555, guid: 3a6fbf0f1b80fae4eb2b43d1223977dc, type: 3}
+      propertyPath: _airDir.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458965256911849555, guid: 3a6fbf0f1b80fae4eb2b43d1223977dc, type: 3}
+      propertyPath: _airDir.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8449737634542561056, guid: 3a6fbf0f1b80fae4eb2b43d1223977dc, type: 3}
       propertyPath: _waypoints.Array.data[0]
       value: 
